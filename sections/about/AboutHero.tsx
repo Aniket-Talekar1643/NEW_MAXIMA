@@ -7,7 +7,7 @@ export const AboutHero = () => {
         <section className="pt-40 pb-24 relative overflow-hidden flex items-center min-h-[60vh]">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-3xl h-[60%] bg-primary/10 blur-[120px] pointer-events-none rounded-full" />
 
-            <div className="container mx-auto px-6 text-center relative z-10">
+            <div className="container mx-auto px-6 md:px-12 lg:px-16 text-center relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}

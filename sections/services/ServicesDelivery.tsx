@@ -6,7 +6,7 @@ import { CheckCircle2 } from 'lucide-react';
 export const ServicesDelivery = () => {
     return (
         <section className="py-24 bg-muted/20 border-y border-border/50">
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto px-6 md:px-12 lg:px-16">
                 <div className="max-w-4xl mx-auto text-center mb-16">
                     <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">OUR SERVICES</span>
                     <h2 className="text-3xl md:text-5xl font-bold mb-8 !leading-tight">Agile & Scalable <span className="text-primary">Service Delivery</span></h2>

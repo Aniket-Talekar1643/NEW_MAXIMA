@@ -30,7 +30,7 @@ export const SectionWrapper = ({
                         },
                     },
                 }}
-                className="container mx-auto px-4 md:px-8 relative z-10"
+                className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10"
             >
                 {children}
             </motion.div>

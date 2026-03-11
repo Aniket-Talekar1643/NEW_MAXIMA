@@ -64,7 +64,7 @@ export const TechStack = () => {
 
     return (
         <SectionWrapper id="tech-stack" className="bg-primary/[0.04] border-y border-border/40 py-20 overflow-hidden">
-            <div className="container mx-auto px-4 mb-16">
+            <div className="container mx-auto px-6 md:px-12 lg:px-16 mb-16">
                 <div className="max-w-3xl">
                     <FadeIn>
                         <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
@@ -87,7 +87,7 @@ export const TechStack = () => {
                     viewport={{ once: true, amount: isSmall ? 0.1 : 0.3 }}
                     className="w-full"
                 >
-                    <motion.div className="flex flex-wrap md:flex-nowrap gap-6 px-4 md:px-8" variants={cardVariants1}>
+                    <motion.div className="flex flex-wrap md:flex-nowrap gap-6 px-6 md:px-12 lg:px-16" variants={cardVariants1}>
                         {[technologies[0], technologies[1]].map((tech, i) => (
                             <TechCard key={tech.category} tech={tech} />
                         ))}
@@ -101,7 +101,7 @@ export const TechStack = () => {
                     viewport={{ once: true, amount: isSmall ? 0.1 : 0.3 }}
                     className="w-full"
                 >
-                    <motion.div className="flex flex-wrap md:flex-nowrap justify-end gap-6 px-4 md:px-8" variants={cardVariants2}>
+                    <motion.div className="flex flex-wrap md:flex-nowrap justify-end gap-6 px-6 md:px-12 lg:px-16" variants={cardVariants2}>
                         {[technologies[2], technologies[3]].map((tech, i) => (
                             <TechCard key={tech.category} tech={tech} />
                         ))}

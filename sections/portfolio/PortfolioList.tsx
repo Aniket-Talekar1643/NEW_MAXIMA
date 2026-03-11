@@ -76,7 +76,7 @@ const LaptopMockup = ({ image }: { image: string }) => (
 export const PortfolioList = () => {
     return (
         <section className="py-24 relative overflow-hidden">
-            <div className="container mx-auto px-6 text-center mb-32">
+            <div className="container mx-auto px-6 md:px-12 lg:px-16 text-center mb-32">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -92,7 +92,7 @@ export const PortfolioList = () => {
                 </motion.div>
             </div>
 
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto px-6 md:px-12 lg:px-16">
                 <div className="space-y-40 md:space-y-64 pb-20">
                     {projects.map((project, index) => {
                         const isEven = index % 2 === 0;

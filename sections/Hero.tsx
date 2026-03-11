@@ -125,13 +125,13 @@ export const Hero = () => {
 
             {/* Binary Stream Effect */}
             <div className="absolute top-0 right-10 bottom-0 w-20 pointer-events-none opacity-5 flex flex-col items-center justify-around text-xs font-mono text-primary select-none overflow-hidden">
-                {[...Array(20)].map((_, i) => (
+                {["10101","01110","11001","00111","10011","01101","11010","00101","10110","01011","11100","00011","10001","01110","11000","00110","10100","01001","11011","00100"].map((bin, i) => (
                     <motion.div
                         key={i}
                         animate={{ y: [0, 40, 0], opacity: [0.2, 1, 0.2] }}
                         transition={{ duration: 3 + i % 5, repeat: Infinity }}
                     >
-                        {Math.random() > 0.5 ? "10101" : "01110"}
+                        {bin}
                     </motion.div>
                 ))}
             </div>
@@ -140,7 +140,7 @@ export const Hero = () => {
             <div className="absolute top-1/4 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-[120px] animate-pulse" />
             <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-primary-deep/20 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '1s' }} />
 
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-12 items-center">
                     <motion.div
                         initial={{ opacity: 0, y: 40 }}

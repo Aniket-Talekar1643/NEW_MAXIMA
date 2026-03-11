@@ -44,44 +44,52 @@ export default function BlogsPage() {
             </section>
 
             {/* Blogs Grid Section */}
-            <section className="py-24 relative overflow-hidden">
-                <div className="container mx-auto px-6">
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <section className="pb-24 relative">
+                <div className="container mx-auto px-6 md:px-12 lg:px-16">
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {blogs.map((blog, index) => (
                             <Link
                                 href={`/blogs/${blog.slug}`}
                                 key={blog.title}
                             >
-                                <motion.div
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
+                                <motion.article
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
                                     viewport={{ once: true }}
-                                    transition={{ delay: index * 0.1 }}
-                                    className="glass-card rounded-[3rem] overflow-hidden group border border-white/5 flex flex-col h-full cursor-pointer hover:border-primary/20 transition-all"
+                                    transition={{ delay: index * 0.07, duration: 0.5 }}
+                                    className="group flex flex-col h-full bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
                                 >
-                                    <div className="aspect-[16/10] relative overflow-hidden">
+                                    {/* Image */}
+                                    <div className="aspect-[16/9] relative overflow-hidden">
                                         <div
-                                            className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
+                                            className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
                                             style={{ backgroundImage: `url(${blog.image})` }}
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
-                                        <div className="absolute bottom-6 left-8 py-2 px-4 glass text-xs font-bold rounded-full text-white">
-                                            {blog.category}
-                                        </div>
                                     </div>
-                                    <div className="p-10 flex flex-col flex-grow">
-                                        <span className="text-white/60 text-sm mb-4 block font-medium">{blog.date}</span>
-                                        <h3 className="text-2xl font-bold mb-8 group-hover:text-primary transition-colors !leading-tight line-clamp-2">
+
+                                    {/* Content */}
+                                    <div className="p-6 flex flex-col flex-grow">
+                                        <div className="flex items-center gap-3 mb-4">
+                                            <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">
+                                                {blog.category}
+                                            </span>
+                                            <span className="text-xs text-muted-foreground">{blog.date}</span>
+                                        </div>
+
+                                        <h3 className="text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-snug line-clamp-2 mb-3">
                                             {blog.title}
                                         </h3>
-                                        <div className="mt-auto pt-8 border-t border-white/5 flex items-center justify-between group/btn">
-                                            <span className="text-white font-bold group-hover/btn:text-primary transition-colors">Read More</span>
-                                            <div className="w-10 h-10 rounded-full border border-primary/30 flex items-center justify-center text-primary group-hover/btn:bg-primary group-hover/btn:text-white group-hover/btn:border-primary transition-all">
-                                                <ChevronRight size={20} />
-                                            </div>
+
+                                        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3 flex-grow">
+                                            {blog.excerpt || "Read the full article to discover insights from our expert team at Maxima Business Solutions."}
+                                        </p>
+
+                                        <div className="mt-5 pt-4 border-t border-border flex items-center text-sm font-semibold text-primary">
+                                            Read Article
+                                            <ChevronRight size={16} className="ml-1 transition-transform group-hover:translate-x-1" />
                                         </div>
                                     </div>
-                                </motion.div>
+                                </motion.article>
                             </Link>
                         ))}
                     </div>

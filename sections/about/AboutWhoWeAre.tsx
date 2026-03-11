@@ -9,7 +9,7 @@ export const AboutWhoWeAre = () => {
         <section className="py-24 relative overflow-hidden bg-muted/30 border-y border-border/50">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}

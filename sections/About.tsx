@@ -102,7 +102,7 @@ const SystemDashboard = () => {
 export const About = () => {
     return (
         <section id="about" className="py-24 relative overflow-hidden bg-muted/20">
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto px-6 md:px-12 lg:px-16">
                 <div className="grid lg:grid-cols-2 gap-16 items-center">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}

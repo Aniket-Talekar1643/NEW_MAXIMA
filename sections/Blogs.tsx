@@ -15,7 +15,7 @@ export const BlogsPreview = () => {
             <div className="absolute top-0 left-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-primary/10 rounded-full blur-[100px] sm:blur-[120px] pointer-events-none" />
             <div className="absolute bottom-0 right-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-blue-600/5 rounded-full blur-[100px] sm:blur-[120px] pointer-events-none" />
 
-            <div className="container mx-auto px-4 sm:px-6 relative z-10">
+            <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 sm:mb-16 gap-4 sm:gap-6">
                     <div className="max-w-2xl">
                         <FadeIn>
@@ -40,58 +40,51 @@ export const BlogsPreview = () => {
                     </FadeIn>
                 </div>
 
-                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7 md:gap-8">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {blogs.slice(0, 3).map((blog, index) => (
                         <FadeIn key={blog.slug} delay={index * 0.1}>
                             <Link href={`/blogs/${blog.slug}`} className="block group">
-                                <motion.div
-                                    whileHover={{ y: -10 }}
-                                    className="relative h-[450px] sm:h-[500px] rounded-[2.5rem] overflow-hidden isolate shadow-2xl hover:shadow-primary/20 transition-all duration-500"
+                                <motion.article
+                                    whileHover={{ y: -4 }}
+                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                    className="flex flex-col h-full bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300"
                                 >
-                                    {/* Image Background */}
-                                    <div className="absolute inset-0 transition-transform duration-1000 group-hover:scale-105">
+                                    {/* Image */}
+                                    <div className="aspect-[16/9] relative overflow-hidden">
                                         <Image
                                             src={blog.image}
                                             alt={blog.title}
                                             fill
-                                            className="object-cover"
+                                            className="object-cover transition-transform duration-500 group-hover:scale-105"
                                         />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
                                     </div>
 
-                                    {/* Content Overlay */}
-                                    <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-end">
-                                        {/* Top Section / Category */}
-                                        <div className="absolute top-6 left-6 flex items-center gap-3">
-                                            <div className="py-1.5 px-4 bg-primary/20 backdrop-blur-md text-[10px] font-bold rounded-full text-primary border border-primary/30 uppercase tracking-[0.2em] shadow-lg">
+                                    {/* Content */}
+                                    <div className="p-6 flex flex-col flex-grow">
+                                        <div className="flex items-center gap-3 mb-4">
+                                            <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full">
                                                 {blog.category}
-                                            </div>
-                                            <span className="text-white/70 text-[10px] sm:text-xs font-mono uppercase tracking-widest">{blog.date}</span>
+                                            </span>
+                                            <span className="text-xs text-muted-foreground flex items-center gap-1">
+                                                <Calendar className="w-3 h-3" />
+                                                {blog.date}
+                                            </span>
                                         </div>
 
-                                        {/* Floating Content Box */}
-                                        <div className="relative transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
-                                            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-white !leading-tight group-hover:text-primary transition-colors line-clamp-2">
-                                                {blog.title}
-                                            </h3>
+                                        <h3 className="text-base sm:text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-snug line-clamp-2 mb-3">
+                                            {blog.title}
+                                        </h3>
 
-                                            <div className="opacity-0 h-0 group-hover:opacity-100 group-hover:h-auto transition-all duration-500 overflow-hidden">
-                                                <p className="text-white/70 text-sm mb-6 line-clamp-2 leading-relaxed">
-                                                    {blog.excerpt}
-                                                </p>
+                                        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3 flex-grow">
+                                            {blog.excerpt || "Read the full article to discover insights from our expert team at Maxima Business Solutions."}
+                                        </p>
 
-                                                <div className="flex items-center gap-3 text-primary">
-                                                    <span className="text-xs font-bold uppercase tracking-[0.2em]">Read Article</span>
-                                                    <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                                                </div>
-                                            </div>
+                                        <div className="mt-5 pt-4 border-t border-border flex items-center text-sm font-semibold text-primary">
+                                            Read Article
+                                            <ChevronRight size={16} className="ml-1 transition-transform group-hover:translate-x-1" />
                                         </div>
                                     </div>
-
-                                    {/* Decorative Borders */}
-                                    <div className="absolute inset-0 rounded-[2.5rem] border-2 border-white/5 group-hover:border-primary/30 transition-colors duration-500 pointer-events-none" />
-                                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/20 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                                </motion.div>
+                                </motion.article>
                             </Link>
                         </FadeIn>
                     ))}

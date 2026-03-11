@@ -51,7 +51,7 @@ export const ServicesGrid = () => {
             <div className="absolute top-1/4 -right-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
             <div className="absolute bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">
                 <div className="text-center mb-20">
                     <motion.span
                         initial={{ opacity: 0, y: 10 }}

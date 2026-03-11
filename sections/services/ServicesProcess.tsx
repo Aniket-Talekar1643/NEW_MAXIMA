@@ -3,7 +3,7 @@
 export const ServicesProcess = () => {
     return (
         <section className="py-24 bg-background border-t border-border/50">
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto px-6 md:px-12 lg:px-16">
                 <div className="text-center">
                     <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">OUR PROCESS</span>
                     <h2 className="text-3xl md:text-5xl font-bold mb-8 max-w-5xl mx-auto !leading-tight">

@@ -25,7 +25,7 @@ const SkillBar = ({ label, percentage, delay }: { label: string; percentage: num
 export const AboutSkills = () => {
     return (
         <section className="py-24 relative">
-            <div className="container mx-auto px-6">
+            <div className="container mx-auto px-6 md:px-12 lg:px-16">
                 <div className="grid lg:grid-cols-2 gap-20 items-center">
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}

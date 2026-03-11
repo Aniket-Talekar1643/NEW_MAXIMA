@@ -1,0 +1,122 @@
+import Link from "next/link";
+import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+export const Footer = () => {
+    return (
+        <footer className="bg-[#050d18] text-muted-foreground pt-14 sm:pt-16 pb-6 sm:pb-8 border-t border-white/5">
+            <div className="container mx-auto px-4 sm:px-6 md:px-8">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-12">
+
+                    {/* Company Info — full width on mobile */}
+                    <div className="col-span-2 lg:col-span-1 flex flex-col gap-4">
+                        <Link href="/" className="flex items-center gap-2 group w-fit">
+                            <div className="w-8 h-8 rounded-md bg-primary flex items-center justify-center text-primary-foreground font-bold text-lg group-hover:scale-105 transition-transform">
+                                M
+                            </div>
+                            <span className="font-bold text-xl text-foreground tracking-tight">
+                                Maxima<span className="text-primary">.</span>
+                            </span>
+                        </Link>
+                        <p className="text-sm leading-relaxed">
+                            Cutting-edge digital IT solutions company in Pune providing MERN stack development, digital marketing, cloud services, and more.
+                        </p>
+                        <div className="flex gap-3 mt-1">
+                            {[
+                                { Icon: Facebook, label: "Facebook" },
+                                { Icon: Twitter, label: "Twitter" },
+                                { Icon: Instagram, label: "Instagram" },
+                                { Icon: Linkedin, label: "LinkedIn" },
+                            ].map(({ Icon, label }) => (
+                                <Link key={label} href="#" className="hover:text-primary transition-colors">
+                                    <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                                    <span className="sr-only">{label}</span>
+                                </Link>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Quick Links */}
+                    <div>
+                        <h3 className="text-foreground font-semibold mb-4 sm:mb-6 text-sm">Company</h3>
+                        <ul className="flex flex-col gap-2.5 text-xs sm:text-sm">
+                            {[
+                                { href: "/about", label: "About Us" },
+                                { href: "/services", label: "Services" },
+                                { href: "/technologies", label: "Technologies" },
+                                { href: "/process", label: "Our Process" },
+                                { href: "/case-studies", label: "Case Studies" },
+                                { href: "/careers", label: "Careers" },
+                            ].map(({ href, label }) => (
+                                <li key={label}>
+                                    <Link href={href} className="hover:text-primary transition-colors">{label}</Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Services */}
+                    <div>
+                        <h3 className="text-foreground font-semibold mb-4 sm:mb-6 text-sm">Services</h3>
+                        <ul className="flex flex-col gap-2.5 text-xs sm:text-sm">
+                            {[
+                                { href: "/services#web-dev", label: "Web & Mobile App Dev" },
+                                { href: "/services#mern", label: "MERN Stack Dev" },
+                                { href: "/services#ecommerce", label: "E-commerce Solutions" },
+                                { href: "/services#marketing", label: "Digital Marketing" },
+                                { href: "/services#cms", label: "WordPress Headless CMS" },
+                                { href: "/services#design", label: "UI/UX Design" },
+                            ].map(({ href, label }) => (
+                                <li key={label}>
+                                    <Link href={href} className="hover:text-primary transition-colors">{label}</Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+
+                    {/* Contact & Newsletter — full width on mobile */}
+                    <div className="col-span-2 lg:col-span-1">
+                        <h3 className="text-foreground font-semibold mb-4 sm:mb-6 text-sm">Get in Touch</h3>
+                        <ul className="flex flex-col gap-3 text-xs sm:text-sm mb-5">
+                            <li className="flex items-start gap-2 sm:gap-3">
+                                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0 mt-0.5" />
+                                <span>Pune, Maharashtra, India</span>
+                            </li>
+                            <li className="flex items-center gap-2 sm:gap-3">
+                                <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
+                                <span>+91 98765 43210</span>
+                            </li>
+                            <li className="flex items-center gap-2 sm:gap-3">
+                                <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
+                                <span>hello@maximabusiness.com</span>
+                            </li>
+                        </ul>
+
+                        <div className="space-y-2">
+                            <p className="text-xs sm:text-sm font-medium text-foreground">Subscribe to our newsletter</p>
+                            <form className="flex gap-2">
+                                <input
+                                    type="email"
+                                    placeholder="Enter your email"
+                                    aria-label="Email address for newsletter"
+                                    className="bg-white/5 border border-white/10 rounded-md px-3 py-2 text-xs sm:text-sm w-full focus:outline-none focus:ring-1 focus:ring-primary"
+                                    required
+                                />
+                                <Button type="submit" size="sm" className="shrink-0 text-xs sm:text-sm">Go</Button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Bottom bar */}
+                <div className="pt-6 sm:pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-muted-foreground/60">
+                    <p>© {new Date().getFullYear()} Maxima Business Solutions. All rights reserved.</p>
+                    <div className="flex gap-4 sm:gap-6">
+                        <Link href="/privacy" className="hover:text-primary transition-colors">Privacy Policy</Link>
+                        <Link href="/terms" className="hover:text-primary transition-colors">Terms of Service</Link>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    );
+};

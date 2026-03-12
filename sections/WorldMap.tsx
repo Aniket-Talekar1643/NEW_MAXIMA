@@ -66,8 +66,8 @@ const WorldMap: React.FC = () => {
                     >
                         <defs>
                             <radialGradient id="globeGlow" cx="50%" cy="50%" r="50%">
-                                <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.15" />
-                                <stop offset="100%" stopColor="transparent" stopOpacity="0" />
+                                <stop offset="0%" stopColor="#176A9A" stopOpacity="0.15" />
+                                <stop offset="100%" stopColor="#0B0B0F" stopOpacity="0" />
                             </radialGradient>
                             <filter id="glow">
                                 <feGaussianBlur stdDeviation="2" result="blur" />

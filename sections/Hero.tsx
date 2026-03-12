@@ -125,7 +125,7 @@ export const Hero = () => {
 
             {/* Binary Stream Effect */}
             <div className="absolute top-0 right-10 bottom-0 w-20 pointer-events-none opacity-5 flex flex-col items-center justify-around text-xs font-mono text-primary select-none overflow-hidden">
-                {["10101","01110","11001","00111","10011","01101","11010","00101","10110","01011","11100","00011","10001","01110","11000","00110","10100","01001","11011","00100"].map((bin, i) => (
+                {["10101", "01110", "11001", "00111", "10011", "01101", "11010", "00101", "10110", "01011", "11100", "00011", "10001", "01110", "11000", "00110", "10100", "01001", "11011", "00100"].map((bin, i) => (
                     <motion.div
                         key={i}
                         animate={{ y: [0, 40, 0], opacity: [0.2, 1, 0.2] }}

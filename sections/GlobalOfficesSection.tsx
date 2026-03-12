@@ -13,14 +13,13 @@ const stats = [
 const GlobalOfficesSection: React.FC = () => {
     return (
         <section
-            className="relative w-full overflow-hidden py-24 lg:py-32"
-            style={{ background: '#0B0B0F' }}
+            className="relative w-full overflow-hidden py-24 lg:py-32 bg-background/50"
         >
             {/* Background subtle radial glow */}
             <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
-                    background: 'radial-gradient(ellipse 80% 60% at 80% 50%, rgba(23,106,154,0.08) 0%, transparent 70%)',
+                    background: 'radial-gradient(ellipse 80% 60% at 80% 50%, hsl(var(--primary) / 0.08) 0%, transparent 70%)',
                 }}
             />
 
@@ -28,7 +27,7 @@ const GlobalOfficesSection: React.FC = () => {
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">
                 <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
 
                     {/* ───── Left: Content ───── */}
@@ -49,7 +48,7 @@ const GlobalOfficesSection: React.FC = () => {
                         </div>
 
                         {/* Heading */}
-                        <h2 className="text-4xl md:text-5xl xl:text-6xl font-bold text-white leading-tight tracking-tight mb-4">
+                        <h2 className="text-4xl md:text-5xl xl:text-6xl font-bold text-foreground leading-tight tracking-tight mb-4">
                             Our global{' '}
                             <span className="text-primary">footprint</span>
                         </h2>
@@ -71,7 +70,7 @@ const GlobalOfficesSection: React.FC = () => {
                                     transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
                                     className="flex flex-col"
                                 >
-                                    <span className="text-3xl font-bold text-white">{stat.value}</span>
+                                    <span className="text-3xl font-bold text-foreground">{stat.value}</span>
                                     <span className="text-xs text-text-secondary uppercase tracking-wider mt-1">{stat.label}</span>
                                 </motion.div>
                             ))}
@@ -90,7 +89,7 @@ const GlobalOfficesSection: React.FC = () => {
                             ].map((office) => (
                                 <span
                                     key={office.city}
-                                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-border text-xs text-text-secondary hover:border-primary hover:text-white transition-all duration-300"
+                                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-border text-xs text-text-secondary hover:border-primary hover:text-foreground transition-all duration-300"
                                 >
                                     <span>{office.flag}</span>
                                     {office.city}

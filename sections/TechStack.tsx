@@ -60,7 +60,7 @@ const cardVariants2: Variants = {
 };
 
 export const TechStack = () => {
-    const isSmall = useMediaQuery("(max-width: 480px)");
+    const isSmall = useMediaQuery("(max-width: 1024px)");
 
     return (
         <SectionWrapper id="tech-stack" className="bg-primary/[0.04] border-y border-border/40 py-20 overflow-hidden">
@@ -89,7 +89,7 @@ export const TechStack = () => {
                 >
                     <motion.div className="flex flex-wrap md:flex-nowrap gap-6 px-6 md:px-12 lg:px-16" variants={cardVariants1}>
                         {[technologies[0], technologies[1]].map((tech, i) => (
-                            <TechCard key={tech.category} tech={tech} />
+                            <TechCard key={tech.category} tech={tech} isSmall={isSmall} />
                         ))}
                     </motion.div>
                 </motion.div>
@@ -103,7 +103,7 @@ export const TechStack = () => {
                 >
                     <motion.div className="flex flex-wrap md:flex-nowrap justify-end gap-6 px-6 md:px-12 lg:px-16" variants={cardVariants2}>
                         {[technologies[2], technologies[3]].map((tech, i) => (
-                            <TechCard key={tech.category} tech={tech} />
+                            <TechCard key={tech.category} tech={tech} isSmall={isSmall} />
                         ))}
                     </motion.div>
                 </motion.div>
@@ -112,7 +112,7 @@ export const TechStack = () => {
     );
 };
 
-const TechCard = ({ tech }: { tech: typeof technologies[0] }) => {
+const TechCard = ({ tech, isSmall }: { tech: typeof technologies[0]; isSmall: boolean }) => {
     return (
         <motion.div
             initial="rest"
@@ -158,8 +158,12 @@ const TechCard = ({ tech }: { tech: typeof technologies[0] }) => {
                         <motion.span
                             key={tool}
                             variants={{
-                                rest: { y: 10, opacity: 0 },
-                                hover: { y: 0, opacity: 1, transition: { delay: index * 0.05, type: "spring", stiffness: 300, damping: 20 } }
+                                rest: { y: isSmall ? 0 : 10, opacity: isSmall ? 1 : 0 },
+                                hover: {
+                                    y: 0,
+                                    opacity: 1,
+                                    transition: { delay: index * 0.05, type: "spring", stiffness: 300, damping: 20 },
+                                },
                             }}
                             className="px-4 py-1.5 bg-secondary/30 text-secondary-foreground rounded-full text-[10px] uppercase tracking-wider font-bold border border-border/50 group-hover:border-primary/20 backdrop-blur-sm shadow-sm"
                         >

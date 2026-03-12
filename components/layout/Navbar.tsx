@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion";
 import { MagneticButton } from "@/components/ui/MagneticButton";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 
 const navLinks = [
     { name: "Home", href: "/" },
@@ -115,7 +115,7 @@ export const Navbar = () => {
                 </nav>
 
                 <div className="hidden md:flex items-center gap-2 lg:gap-4 relative z-10">
-                    <ThemeToggle />
+                    <ThemeSwitcher />
                     <MagneticButton strength={12}>
                         <Button asChild className="rounded-3xl px-8 h-10 bg-primary-gradient text-white border border-white/10 shadow-xl shadow-primary/20 hover:shadow-primary/40 group overflow-hidden transition-all hover:scale-105 active:scale-95">
                             <Link href="/contact">
@@ -129,7 +129,7 @@ export const Navbar = () => {
 
                 {/* Mobile Menu Toggle - Visible below MD */}
                 <div className="md:hidden flex items-center gap-2 relative z-10">
-                    <ThemeToggle />
+                    <ThemeSwitcher />
                     <button
                         className="text-slate-900 p-2"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

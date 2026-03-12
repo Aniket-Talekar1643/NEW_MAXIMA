@@ -88,11 +88,11 @@ const SystemDashboard = () => {
             <div className="mt-4 pt-4 border-t border-white/5 grid grid-cols-2 gap-2">
                 <div className="h-12 bg-primary/10 rounded-lg flex flex-col items-center justify-center">
                     <span className="text-[8px] text-text-secondary uppercase">Builds</span>
-                    <span className="text-xs font-bold text-white">2.4k</span>
+                    <span className="text-xs font-bold text-foreground">2.4k</span>
                 </div>
                 <div className="h-12 bg-white/5 rounded-lg flex flex-col items-center justify-center">
                     <span className="text-[8px] text-text-secondary uppercase">Tests</span>
-                    <span className="text-xs font-bold text-white">Passed</span>
+                    <span className="text-xs font-bold text-foreground">Passed</span>
                 </div>
             </div>
         </div>
@@ -126,7 +126,7 @@ export const About = () => {
                         <Link href="/about">
                             <motion.button
                                 whileHover={{ x: 10 }}
-                                className="group flex items-center space-x-2 text-white font-bold text-lg"
+                                className="group flex items-center space-x-2 text-foreground font-bold text-lg"
                             >
                                 <span>Read More</span>
                                 <svg

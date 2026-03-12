@@ -3,7 +3,8 @@
 import { FadeIn, SectionWrapper } from "@/components/layout/SectionWrapper";
 import { Laptop, Code2, ShoppingCart, TrendingUp, Layers, PenTool } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import React, { useRef } from "react";
 
 const services = [
     {
@@ -50,6 +51,81 @@ const services = [
     },
 ];
 
+const ServiceCard = ({ service, index }: { service: any; index: number }) => {
+    const cardRef = useRef<HTMLDivElement>(null);
+    const mouseX = useMotionValue(0);
+    const mouseY = useMotionValue(0);
+
+    const springX = useSpring(mouseX, { stiffness: 300, damping: 30 });
+    const springY = useSpring(mouseY, { stiffness: 300, damping: 30 });
+
+    const rotateX = useTransform(springY, [-0.5, 0.5], [5, -5]);
+    const rotateY = useTransform(springX, [-0.5, 0.5], [-5, 5]);
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (!cardRef.current) return;
+        const rect = cardRef.current.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width;
+        const y = (e.clientY - rect.top) / rect.height;
+        mouseX.set(x - 0.5);
+        mouseY.set(y - 0.5);
+    };
+
+    const handleMouseLeave = () => {
+        mouseX.set(0);
+        mouseY.set(0);
+    };
+
+    return (
+        <FadeIn delay={0.1 * index}>
+            <motion.div
+                ref={cardRef}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+                style={{
+                    rotateX,
+                    rotateY,
+                    transformStyle: "preserve-3d",
+                }}
+                className="bg-card text-card-foreground border border-border p-8 rounded-3xl h-full flex flex-col group relative overflow-hidden shadow-sm transition-colors hover:border-primary/50"
+            >
+                {/* Spotlight Gradient */}
+                <motion.div
+                    className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    style={{
+                        background: useTransform(
+                            [springX, springY],
+                            ([x, y]: any[]) => `radial-gradient(600px circle at ${(x + 0.5) * 100}% ${(y + 0.5) * 100}%, rgba(var(--primary-rgb), 0.15), transparent 80%)`
+                        ),
+                    }}
+                />
+
+                <motion.div
+                    className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-500"
+                />
+                <motion.div
+                    className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 border ${service.color} group-hover:scale-110 transition-transform`}
+                >
+                    {service.icon}
+                </motion.div>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
+                <p className="text-muted-foreground flex-1 mb-6 text-sm leading-relaxed">
+                    {service.description}
+                </p>
+                <Link
+                    href={service.href}
+                    className="text-sm font-semibold text-foreground flex items-center gap-2 group-hover:text-primary transition-colors mt-auto w-fit"
+                >
+                    Learn more
+                    <motion.span
+                        className="group-hover:translate-x-1 transition-transform"
+                    >&rarr;</motion.span>
+                </Link>
+            </motion.div>
+        </FadeIn>
+    );
+};
+
 export const ServicesOverview = () => {
     return (
         <SectionWrapper id="services" className="bg-background">
@@ -78,58 +154,7 @@ export const ServicesOverview = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 perspective-1000">
                 {services.map((service, index) => (
-                    <FadeIn key={service.title} delay={0.1 * index}>
-                        <motion.div
-                            initial="rest"
-                            whileHover="hover"
-                            animate="rest"
-                            variants={{
-                                rest: { scale: 1, rotateY: 0, rotateX: 0, y: 0 },
-                                hover: {
-                                    scale: 1.03,
-                                    rotateY: index % 2 === 0 ? 2 : -2,
-                                    rotateX: 2,
-                                    y: -8,
-                                    transition: { type: "spring", stiffness: 300, damping: 20 }
-                                }
-                            }}
-                            className="bg-card text-card-foreground border border-border p-8 rounded-3xl h-full flex flex-col group relative overflow-hidden shadow-sm"
-                            style={{ transformStyle: "preserve-3d" }}
-                        >
-                            <motion.div
-                                variants={{
-                                    rest: { scale: 1, opacity: 0.5 },
-                                    hover: { scale: 1.5, opacity: 1 }
-                                }}
-                                className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full -z-10"
-                            />
-                            <motion.div
-                                variants={{
-                                    rest: { y: 0, rotate: 0 },
-                                    hover: { y: -5, rotate: 5 }
-                                }}
-                                className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 border ${service.color}`}
-                            >
-                                {service.icon}
-                            </motion.div>
-                            <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                            <p className="text-muted-foreground flex-1 mb-6 text-sm leading-relaxed">
-                                {service.description}
-                            </p>
-                            <Link
-                                href={service.href}
-                                className="text-sm font-semibold text-foreground flex items-center gap-2 group-hover:text-primary transition-colors mt-auto w-fit"
-                            >
-                                Learn more
-                                <motion.span
-                                    variants={{
-                                        rest: { x: 0 },
-                                        hover: { x: 5 }
-                                    }}
-                                >&rarr;</motion.span>
-                            </Link>
-                        </motion.div>
-                    </FadeIn>
+                    <ServiceCard key={service.title} service={service} index={index} />
                 ))}
             </div>
         </SectionWrapper>

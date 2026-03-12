@@ -1,8 +1,62 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import Link from 'next/link';
+import { MagneticButton } from '@/components/ui/MagneticButton';
+import { useMousePosition } from '@/hooks/useMousePosition';
+
+const TextReveal = ({ text, className = "" }: { text: string; className?: string }) => {
+    const characters = text.split("");
+
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: (i = 1) => ({
+            opacity: 1,
+            transition: { staggerChildren: 0.03, delayChildren: 0.04 * i },
+        }),
+    };
+
+    const childVariants = {
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                type: "spring" as const,
+                damping: 12,
+                stiffness: 200,
+            },
+        },
+        hidden: {
+            opacity: 0,
+            y: 20,
+            transition: {
+                type: "spring" as const,
+                damping: 12,
+                stiffness: 200,
+            },
+        },
+    };
+
+    return (
+        <motion.span
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className={`inline-flex flex-wrap ${className}`}
+        >
+            {characters.map((char, index) => (
+                <motion.span
+                    variants={childVariants}
+                    key={index}
+                    className={char === " " ? "mr-[0.25em]" : ""}
+                >
+                    {char}
+                </motion.span>
+            ))}
+        </motion.span>
+    );
+};
 
 const FloatingKeywords = () => {
     const [mounted, setMounted] = React.useState(false);
@@ -44,8 +98,25 @@ const FloatingKeywords = () => {
 };
 
 export const Hero = () => {
+    const { x, y } = useMousePosition();
+    const mouseX = useSpring(x, { stiffness: 50, damping: 20 });
+    const mouseY = useSpring(y, { stiffness: 50, damping: 20 });
+
+    const rotateX = useTransform(mouseY, [0, 1000], [5, -5]);
+    const rotateY = useTransform(mouseX, [0, 1500], [-5, 5]);
+
+    const illustrationX = useTransform(mouseX, [0, 1500], [15, -15]);
+    const illustrationY = useTransform(mouseY, [0, 1000], [15, -15]);
+
     return (
         <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-hero-glow">
+            {/* Mouse Follower Glow */}
+            <motion.div
+                className="pointer-events-none absolute inset-0 z-0 opacity-30"
+                style={{
+                    background: `radial-gradient(600px circle at ${mouseX}px ${mouseY}px, rgba(var(--primary-rgb), 0.15), transparent 80%)`,
+                }}
+            />
             {/* Animated Grid Background */}
             <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none" />
 
@@ -81,10 +152,17 @@ export const Hero = () => {
                             <span className="text-xs font-bold text-primary tracking-widest uppercase">PUNE'S TOP IT AGENCY</span>
                         </div>
 
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold !leading-[1.1] tracking-tight mb-6">
-                            Cutting-Edge <br />
-                            <span className="text-primary">Digital IT Solutions</span> <br />
-                            for Modern <span className="text-gradient">Businesses</span>
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold !leading-[1.1] tracking-tight mb-6 flex flex-col">
+                            <TextReveal text="Cutting-Edge" />
+                            <span className="text-primary truncate h-[1.2em]">
+                                <TextReveal text="Digital IT Solutions" />
+                            </span>
+                            <span className="flex flex-wrap items-center">
+                                <TextReveal text="for Modern " />
+                                <span className="text-gradient ml-2">
+                                    <TextReveal text="Businesses" />
+                                </span>
+                            </span>
                         </h1>
 
                         <p className="text-lg md:text-xl text-text-secondary mb-8 max-w-lg leading-relaxed min-h-[4rem] sm:min-h-[3.5rem] flex flex-col justify-center">
@@ -100,7 +178,7 @@ export const Hero = () => {
                                             ease: "easeInOut",
                                             times: [0, 0.25, 0.5, 0.75, 1]
                                         }}
-                                        className="flex flex-col text-white font-bold"
+                                        className="flex flex-col text-foreground font-bold"
                                     >
                                         <span className="h-7 sm:h-8">MERN stack development</span>
                                         <span className="h-7 sm:h-8 text-primary">Mobile app development</span>
@@ -112,27 +190,31 @@ export const Hero = () => {
                             </span>
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <Link href="/contact">
-                                <motion.button
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                    className="px-8 py-4 rounded-full bg-primary-gradient text-white font-bold text-lg shadow-xl shadow-primary/20 transition-all hover:shadow-primary/40 flex items-center gap-2"
-                                >
-                                    <span>Contact Us</span>
-                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                    </svg>
-                                </motion.button>
-                            </Link>
-                            <Link href="/services">
-                                <motion.button
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                    className="px-8 py-4 rounded-full border border-border text-white font-bold text-lg bg-white/5 backdrop-blur-sm transition-all hover:bg-white/10"
-                                >
-                                    Explore Services
-                                </motion.button>
-                            </Link>
+                            <MagneticButton>
+                                <Link href="/contact">
+                                    <motion.button
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        className="px-8 py-4 rounded-full bg-primary-gradient text-white font-bold text-lg shadow-xl shadow-primary/20 transition-all hover:shadow-primary/40 flex items-center gap-2"
+                                    >
+                                        <span>Contact Us</span>
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                        </svg>
+                                    </motion.button>
+                                </Link>
+                            </MagneticButton>
+                            <MagneticButton strength={20}>
+                                <Link href="/services">
+                                    <motion.button
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        className="px-8 py-4 rounded-full border border-border text-foreground font-bold text-lg bg-muted/40 backdrop-blur-sm transition-all hover:bg-muted/60"
+                                    >
+                                        Explore Services
+                                    </motion.button>
+                                </Link>
+                            </MagneticButton>
                         </div>
                     </motion.div>
 
@@ -140,6 +222,7 @@ export const Hero = () => {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1, delay: 0.2 }}
+                        style={{ x: illustrationX, y: illustrationY, rotateX, rotateY, transformStyle: "preserve-3d" }}
                         className="relative hidden lg:block"
                     >
                         {/* Abstract Tech Illustration Enhanced */}
@@ -199,7 +282,7 @@ export const Hero = () => {
                                             className="w-full h-full object-cover"
                                         />
                                     </div>
-                                    <span className="text-[10px] font-mono text-white/60">CORE ENGINE</span>
+                                    <span className="text-[10px] font-mono text-foreground/60">CORE ENGINE</span>
                                 </div>
                             </div>
 
@@ -222,7 +305,7 @@ export const Hero = () => {
                                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                                 className="absolute bottom-10 left-10 glass-card p-4 rounded-2xl border border-primary/30"
                             >
-                                <div className="text-[10px] font-mono text-white/50">MERN Stack Deployment</div>
+                                <div className="text-[10px] font-mono text-foreground/50">MERN Stack Deployment</div>
                                 <div className="w-full h-1 bg-primary/20 mt-2 rounded overflow-hidden">
                                     <motion.div
                                         animate={{ width: ["0%", "100%", "0%"] }}

@@ -61,7 +61,7 @@ export const Partners = () => {
                     viewport={{ once: true, amount: 0.3 }}
                 >
                     <motion.div variants={cardVariants1}>
-                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6 leading-tight">
+                        <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-6 leading-tight">
                             Our partners &amp; <br />
                             <span className="text-primary">strategic alliances</span>
                         </h2>

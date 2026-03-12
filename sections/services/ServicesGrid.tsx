@@ -110,7 +110,7 @@ export const ServicesGrid = () => {
                                 <service.icon className="text-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300" size={36} />
                             </motion.div>
 
-                            <h3 className="text-2xl font-bold mb-4 text-foreground relative z-10">{service.title}</h3>
+                            <h3 className="text-xl font-bold mb-4 text-foreground relative z-10">{service.title}</h3>
                             <p className="text-muted-foreground leading-relaxed relative z-10">
                                 {service.desc}
                             </p>

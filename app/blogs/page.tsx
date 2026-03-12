@@ -22,7 +22,7 @@ export default function BlogsPage() {
                         transition={{ duration: 0.8 }}
                     >
                         <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block leading-tight">OUR BLOGS</span>
-                        <h1 className="text-4xl md:text-6xl font-bold mb-8 !leading-tight tracking-tight">
+                        <h1 className="text-3xl md:text-5xl font-bold mb-8 !leading-tight tracking-tight">
                             Insights, Trends & <span className="text-primary relative inline-block">
                                 Updates
                                 <motion.svg className="absolute -bottom-4 left-0 w-full" viewBox="0 0 100 20" preserveAspectRatio="none">

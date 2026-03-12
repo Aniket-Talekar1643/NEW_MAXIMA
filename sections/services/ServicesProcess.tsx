@@ -6,7 +6,7 @@ export const ServicesProcess = () => {
             <div className="container mx-auto px-6 md:px-12 lg:px-16">
                 <div className="text-center">
                     <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">OUR PROCESS</span>
-                    <h2 className="text-3xl md:text-5xl font-bold mb-8 max-w-5xl mx-auto !leading-tight">
+                    <h2 className="text-2xl md:text-4xl font-bold mb-8 max-w-5xl mx-auto !leading-tight">
                         Grow Globally With MERN Stack
                     </h2>
                     <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">

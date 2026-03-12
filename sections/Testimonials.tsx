@@ -30,7 +30,7 @@ export const Testimonials = () => {
         <SectionWrapper id="testimonials" className="bg-muted/30 text-foreground overflow-hidden">
             <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
                 <FadeIn>
-                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight mb-4">
+                    <h2 className="text-xl sm:text-2xl md:text-4xl font-bold tracking-tight mb-4">
                         Client <span className="text-primary">Success Stories</span>
                     </h2>
                 </FadeIn>

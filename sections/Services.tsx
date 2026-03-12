@@ -108,7 +108,7 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
                 >
                     {service.icon}
                 </motion.div>
-                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
+                <h3 className="text-lg font-bold mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
                 <p className="text-muted-foreground flex-1 mb-6 text-sm leading-relaxed">
                     {service.description}
                 </p>
@@ -132,7 +132,7 @@ export const ServicesOverview = () => {
             <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
                 <div className="max-w-2xl">
                     <FadeIn>
-                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+                        <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-4">
                             Comprehensive <span className="text-primary">IT Services</span>
                         </h2>
                     </FadeIn>

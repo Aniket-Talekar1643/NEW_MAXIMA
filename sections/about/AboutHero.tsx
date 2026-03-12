@@ -27,7 +27,7 @@ export const AboutHero = () => {
                         About Us
                     </motion.div>
 
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 !leading-tight tracking-tight">
+                    <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 !leading-tight tracking-tight">
                         Driving Innovation & Growth as a <span className="text-primary relative inline-block">
                             Leading
                             <motion.svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 100 20" preserveAspectRatio="none">

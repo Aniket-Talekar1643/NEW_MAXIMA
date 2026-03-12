@@ -27,10 +27,10 @@ export const PortfolioHero = () => {
                         SHOWCASE
                     </motion.div>
 
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 !leading-tight tracking-tight">
+                    <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 !leading-tight tracking-tight">
                         Explore Our <span className="text-primary relative inline-block z-10 pb-6">
                             Software Projects
-                            <motion.svg className="absolute -bottom-8 left-0 w-full text-primary -z-10" viewBox="0 0 100 20" preserveAspectRatio="none">
+                            <motion.svg className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[80%] text-primary -z-10" viewBox="0 0 100 20" preserveAspectRatio="none">
                                 <motion.path d="M0,10 Q50,20 100,10" fill="none" stroke="currentColor" strokeWidth="4"
                                     initial={{ pathLength: 0 }}
                                     animate={{ pathLength: 1 }}

@@ -84,7 +84,7 @@ export const PortfolioList = () => {
                     transition={{ duration: 0.8 }}
                     className="max-w-xl mx-auto"
                 >
-                    <h2 className="text-3xl md:text-5xl font-bold mb-4 !leading-tight">Our Portfolio</h2>
+                    <h2 className="text-2xl md:text-4xl font-bold mb-4 !leading-tight">Our Portfolio</h2>
                     <p className="text-lg text-muted-foreground mb-8">
                         Explore our recent projects and successful <br className="hidden md:block" /> client collaborations.
                     </p>
@@ -114,7 +114,7 @@ export const PortfolioList = () => {
                                         <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                                         Featured Project
                                     </motion.div>
-                                    <h3 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground !leading-tight tracking-tight">
+                                    <h3 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground !leading-tight tracking-tight">
                                         {project.name}
                                     </h3>
                                     <p className="text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">

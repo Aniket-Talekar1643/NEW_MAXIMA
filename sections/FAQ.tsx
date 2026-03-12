@@ -61,7 +61,7 @@ export const FAQ = () => {
                             <HelpCircle className="w-4 h-4" />
                             <span>Common Questions</span>
                         </div>
-                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+                        <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-4">
                             Frequently Asked <span className="text-primary">Questions</span>
                         </h2>
                         <p className="text-lg text-muted-foreground">

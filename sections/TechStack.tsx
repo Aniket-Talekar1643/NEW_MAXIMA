@@ -67,7 +67,7 @@ export const TechStack = () => {
             <div className="container mx-auto px-6 md:px-12 lg:px-16 mb-16">
                 <div className="max-w-3xl">
                     <FadeIn>
-                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+                        <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-4">
                             Modern <span className="text-primary">Tech Stack</span>
                         </h2>
                     </FadeIn>
@@ -138,7 +138,7 @@ const TechCard = ({ tech, isSmall }: { tech: typeof technologies[0]; isSmall: bo
             />
 
             <div className="relative z-10">
-                <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
+                <h3 className="text-xl font-bold text-foreground mb-4 flex items-center gap-3">
                     <motion.div
                         variants={{
                             rest: { scale: 1, backgroundColor: "hsl(var(--primary)/0.6)" },

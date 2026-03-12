@@ -113,7 +113,7 @@ export const About = () => {
                         <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
                             About Us
                         </span>
-                        <h2 className="text-3xl md:text-5xl font-bold mb-6 !leading-tight">
+                        <h2 className="text-2xl md:text-4xl font-bold mb-6 !leading-tight">
                             MERN Stack Development, <br />
                             <span className="text-primary">Digital IT Solutions</span> <br />
                             Company in Pune.

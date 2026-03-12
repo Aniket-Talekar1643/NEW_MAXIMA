@@ -18,7 +18,7 @@ export const Industries = () => {
         <SectionWrapper id="industries" className="bg-background">
             <div className="text-center max-w-3xl mx-auto mb-16">
                 <FadeIn>
-                    <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
+                    <h2 className="text-2xl md:text-4xl font-bold tracking-tight mb-4">
                         Industries We <span className="text-primary">Serve</span>
                     </h2>
                 </FadeIn>

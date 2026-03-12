@@ -152,7 +152,7 @@ export const Hero = () => {
                             <span className="text-xs font-bold text-primary tracking-widest uppercase">PUNE'S TOP IT AGENCY</span>
                         </div>
 
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold !leading-[1.1] tracking-tight mb-6 flex flex-col">
+                        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold !leading-[1.1] tracking-tight mb-6 flex flex-col">
                             <TextReveal text="Cutting-Edge" />
                             <span className="text-primary truncate h-[1.2em]">
                                 <TextReveal text="Digital IT Solutions" />

@@ -54,7 +54,7 @@ export default function ContactPage() {
             <SectionWrapper className="pb-12">
                 <FadeIn>
                     <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Get In Touch</span>
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
+                    <h1 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">
                         Let&apos;s Build Something <span className="text-primary">Exceptional</span> Together
                     </h1>
                     <p className="text-lg text-muted-foreground max-w-2xl">

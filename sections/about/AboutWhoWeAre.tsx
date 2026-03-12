@@ -38,7 +38,7 @@ export const AboutWhoWeAre = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Who We Are</span>
-                        <h2 className="text-3xl md:text-5xl font-bold mb-8 !leading-tight">
+                        <h2 className="text-2xl md:text-4xl font-bold mb-8 !leading-tight">
                             Your Premier Web Development <br />
                             Company in <span className="text-primary relative inline-block">
                                 Pune

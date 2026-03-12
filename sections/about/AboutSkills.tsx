@@ -34,7 +34,7 @@ export const AboutSkills = () => {
                         transition={{ duration: 0.8 }}
                     >
                         <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Our Skills</span>
-                        <h2 className="text-3xl md:text-5xl font-bold mb-8 !leading-tight">Striving for <span className="text-primary">Excellence</span></h2>
+                        <h2 className="text-2xl md:text-4xl font-bold mb-8 !leading-tight">Striving for <span className="text-primary">Excellence</span></h2>
                         <p className="text-lg text-muted-foreground leading-relaxed mb-10">
                             As a leading web development company in Pune, we never settle for just “good.”
                             We constantly strive for excellence and improvement in all we do. That’s our promise.
@@ -78,7 +78,7 @@ export const AboutSkills = () => {
                                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                                 </svg>
                             </div>
-                            <h3 className="text-2xl font-bold">Core Competencies</h3>
+                            <h3 className="text-xl font-bold">Core Competencies</h3>
                         </div>
 
                         <SkillBar label="Full Stack Development" percentage={100} delay={0.2} />

@@ -4,7 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Toaster } from "sonner";
+import { KeyboardWrapper } from "@/components/KeyboardWrapper";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -107,7 +107,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-          <Toaster position="top-right" richColors />
+          <KeyboardWrapper />
         </ThemeProvider>
       </body>
     </html>

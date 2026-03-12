@@ -3,7 +3,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Navbar } from '@/components/layout/Navbar';
-import { Footer } from '@/components/layout/Footer';
 import { Newsletter } from '@/components/Newsletter';
 import { ChevronRight } from 'lucide-react';
 import { blogs } from '@/constants/blogs';
@@ -97,7 +96,6 @@ export default function BlogsPage() {
             </section>
 
             <Newsletter />
-            {/* <Footer /> */}
         </main>
     );
 }

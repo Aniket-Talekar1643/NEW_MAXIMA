@@ -1,22 +1,24 @@
 import Link from "next/link";
 import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
     return (
-        <footer className="bg-[#050d18] text-muted-foreground pt-14 sm:pt-16 pb-6 sm:pb-8 border-t border-white/5">
-            <div className="container mx-auto px-4 sm:px-6 md:px-8">
+        <footer className="bg-background/95 backdrop-blur-md text-muted-foreground pt-14 sm:pt-16 pb-6 sm:pb-8 border-t border-border/10">
+            <div className="container mx-auto px-6 md:px-12 lg:px-16">
                 <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-10 sm:mb-12">
 
                     {/* Company Info — full width on mobile */}
                     <div className="col-span-2 lg:col-span-1 flex flex-col gap-4">
                         <Link href="/" className="flex items-center gap-2 group w-fit">
-                            <div className="w-8 h-8 rounded-md bg-primary flex items-center justify-center text-primary-foreground font-bold text-lg group-hover:scale-105 transition-transform">
-                                M
-                            </div>
-                            <span className="font-bold text-xl text-foreground tracking-tight">
-                                Maxima<span className="text-primary">.</span>
-                            </span>
+                            <Image
+                                src="/LOGO/mbs-logo-1.png"
+                                alt="Maxima Business Solutions Logo"
+                                width={200}
+                                height={52}
+                                className="h-10 md:h-12 w-auto object-contain dark:brightness-[0.9] dark:contrast-125 brightness-100 contrast-100 transition-transform group-hover:scale-105"
+                            />
                         </Link>
                         <p className="text-sm leading-relaxed">
                             Cutting-edge digital IT solutions company in Pune providing MERN stack development, digital marketing, cloud services, and more.

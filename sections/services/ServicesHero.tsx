@@ -27,8 +27,8 @@ export const ServicesHero = () => {
                         Our Services
                     </motion.div>
 
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 !leading-tight tracking-tight">
-                        Web & Mobile App <br className="hidden md:block" />Development Services in <span className="text-primary relative inline-block">
+                    <h1 className="mb-8 font-bold !leading-tight tracking-tight">
+                        A Global Software Development <br className="hidden md:block" />Company Based in <span className="text-primary relative inline-block">
                             Pune
                             <motion.svg className="absolute -bottom-2 left-0 w-full text-primary" viewBox="0 0 100 20" preserveAspectRatio="none">
                                 <motion.path d="M0,10 Q50,20 100,10" fill="none" stroke="currentColor" strokeWidth="4"
@@ -39,9 +39,9 @@ export const ServicesHero = () => {
                             </motion.svg>
                         </span>
                     </h1>
-                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-                        We deliver results-driven web and mobile app development services in Pune, custom solutions 
-                        that align with your business goals and deliver measurable global value.
+                    <p className="max-w-3xl mx-auto">
+                        As a global software development company based in Pune, we provide solutions from consulting
+                        to implementation that align with your goals and deliver measurable value.
                     </p>
                 </motion.div>
             </div>

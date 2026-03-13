@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus, HelpCircle } from "lucide-react";
 import { FadeIn, SectionWrapper } from "@/components/layout/SectionWrapper";
+import { SectionHeader } from "@/components/layout/SectionHeader";
 
 const faqs = [
     {
@@ -59,20 +60,11 @@ export const FAQ = () => {
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
             <div className="max-w-4xl mx-auto">
-                <div className="text-center mb-16">
-                    <FadeIn>
-                        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-4">
-                            <HelpCircle className="w-4 h-4" />
-                            <span>Common Questions</span>
-                        </div>
-                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
-                            Frequently Asked <span className="text-primary">Questions</span>
-                        </h2>
-                        <p className="text-lg text-muted-foreground">
-                            Find answers to the most common queries about our services and process.
-                        </p>
-                    </FadeIn>
-                </div>
+                <SectionHeader 
+                    title={<>Frequently Asked <span className="text-primary">Questions</span></>}
+                    subtitle="Find answers to the most common queries about our services and process."
+                    label="Common Questions"
+                />
 
                 <div className="space-y-4">
                     {faqs.map((faq, i) => (
@@ -87,7 +79,7 @@ export const FAQ = () => {
                                     onClick={() => setActiveIndex(activeIndex === i ? null : i)}
                                     className="w-full flex items-center justify-between p-6 text-left"
                                 >
-                                    <span className="text-lg font-bold text-foreground pr-8">
+                                    <span className="text-lg font-bold pr-8">
                                         {faq.question}
                                     </span>
                                     <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${activeIndex === i ? "bg-primary text-primary-foreground" : "bg-primary/10 text-primary"
@@ -109,7 +101,7 @@ export const FAQ = () => {
                                             transition={{ duration: 0.3, ease: "easeInOut" }}
                                             className="overflow-hidden"
                                         >
-                                            <div className="px-6 pb-6 text-muted-foreground leading-relaxed">
+                                            <div className="px-6 pb-6">
                                                 <div className="pt-2 border-t border-border/50">
                                                     {faq.answer}
                                                 </div>

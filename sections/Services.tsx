@@ -4,9 +4,18 @@ import { FadeIn, SectionWrapper } from "@/components/layout/SectionWrapper";
 import { Laptop, Code2, ShoppingCart, TrendingUp, Layers, PenTool } from "lucide-react";
 import Link from "next/link";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { SectionHeader } from "@/components/layout/SectionHeader";
 import React, { useRef } from "react";
 
-const services = [
+interface Service {
+    title: string;
+    description: string;
+    icon: React.ReactNode;
+    href: string;
+    color: string;
+}
+
+const services: Service[] = [
     {
         title: "Custom Web & Mobile App",
         description: "High-performance native and cross-platform mobile apps alongside responsive web applications built for scale.",
@@ -51,7 +60,7 @@ const services = [
     },
 ];
 
-const ServiceCard = ({ service, index }: { service: any; index: number }) => {
+const ServiceCard = ({ service, index }: { service: Service; index: number }) => {
     const cardRef = useRef<HTMLDivElement>(null);
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);
@@ -108,8 +117,8 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
                 >
                     {service.icon}
                 </motion.div>
-                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">{service.title}</h3>
-                <p className="text-muted-foreground flex-1 mb-6 text-sm leading-relaxed">
+                <h3>{service.title}</h3>
+                <p className="flex-1 mb-6 text-sm">
                     {service.description}
                 </p>
                 <Link
@@ -129,19 +138,13 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
 export const ServicesOverview = () => {
     return (
         <SectionWrapper id="services" className="bg-background">
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
-                <div className="max-w-2xl">
-                    <FadeIn>
-                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
-                            Comprehensive <span className="text-primary">IT Services</span>
-                        </h2>
-                    </FadeIn>
-                    <FadeIn delay={0.1}>
-                        <p className="text-lg text-muted-foreground">
-                            We provide end-to-end digital expertise. From strategic design to complex engineering, our solutions drive measurable business growth.
-                        </p>
-                    </FadeIn>
-                </div>
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-6 mb-16">
+                <SectionHeader 
+                    title={<>Comprehensive <span className="text-primary">IT Services</span></>}
+                    subtitle="We provide end-to-end digital expertise. From strategic design to complex engineering, our solutions drive measurable business growth."
+                    centered={false}
+                    className="mb-0 pb-0"
+                />
                 <FadeIn delay={0.2} direction="left">
                     <Link
                         href="/services"

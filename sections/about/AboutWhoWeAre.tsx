@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { SectionHeader } from '@/components/layout/SectionHeader';
 
 export const AboutWhoWeAre = () => {
     return (
@@ -31,39 +32,29 @@ export const AboutWhoWeAre = () => {
                         <div className="absolute -top-6 -left-6 w-32 h-32 bg-primary/20 rounded-full blur-3xl -z-10" />
                     </motion.div>
 
-                    <motion.div
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Who We Are</span>
-                        <h2 className="text-3xl md:text-5xl font-bold mb-8 !leading-tight">
-                            Your Premier Web Development <br />
-                            Company in <span className="text-primary relative inline-block">
-                                Pune
-                                <span className="absolute bottom-1 left-0 w-full h-3 bg-primary/20 -z-10 -rotate-2" />
-                            </span>
-                        </h2>
-                        <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                            Established in 2009, Maxima Business Solutions is a leading web development company in Pune,
-                            crafting innovative digital solutions. We blend technology and talent to empower global
-                            organizations with end-to-end digital products, helping them scale and gain a competitive edge.
-                            We also create custom branding strategies for powerful audience impact.
-                        </p>
 
-                        <Link href="/contact" className="inline-block relative group">
-                            <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full group-hover:bg-primary/30 transition-colors" />
-                            <motion.button
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
-                                className="relative flex items-center space-x-3 bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold shadow-lg"
-                            >
-                                <span>Get in Touch</span>
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                            </motion.button>
-                        </Link>
-                    </motion.div>
+                    <div>
+                        <SectionHeader 
+                            title={<>Your Premier Web Development Company in <span className="text-primary relative inline-block">Pune<span className="absolute bottom-1 left-0 w-full h-3 bg-primary/20 -z-10 -rotate-2" /></span></>}
+                            subtitle="Established in 2009, Maxima Business Solutions is a leading web development company in Pune, crafting innovative digital solutions. We blend technology and talent to empower global organizations with end-to-end digital products, helping them scale and gain a competitive edge."
+                            label="Who We Are"
+                            centered={false}
+                        />
+
+                        <div className="mt-8">
+                            <Link href="/contact" className="inline-block relative group">
+                                <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full group-hover:bg-primary/30 transition-colors" />
+                                <motion.button
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="relative flex items-center space-x-3 bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold shadow-lg"
+                                >
+                                    <span>Get in Touch</span>
+                                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                </motion.button>
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

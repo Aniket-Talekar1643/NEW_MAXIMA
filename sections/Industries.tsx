@@ -3,6 +3,7 @@
 import { FadeIn, SectionWrapper } from "@/components/layout/SectionWrapper";
 import { Building2, Landmark, GraduationCap, HeartPulse, Stethoscope, ShoppingBag, Truck, Cpu } from "lucide-react";
 import { motion } from "framer-motion";
+import { SectionHeader } from "@/components/layout/SectionHeader";
 
 const industries = [
     { name: "Healthcare & MedTech", icon: <HeartPulse className="w-8 h-8" /> },
@@ -16,18 +17,10 @@ const industries = [
 export const Industries = () => {
     return (
         <SectionWrapper id="industries" className="bg-background">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-                <FadeIn>
-                    <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
-                        Industries We <span className="text-primary">Serve</span>
-                    </h2>
-                </FadeIn>
-                <FadeIn delay={0.1}>
-                    <p className="text-lg text-muted-foreground">
-                        We deliver tailored digital solutions that meet the specific regulatory and operational demands of diverse global industries.
-                    </p>
-                </FadeIn>
-            </div>
+            <SectionHeader 
+                title={<>Industries We <span className="text-primary">Serve</span></>}
+                subtitle="We deliver tailored digital solutions that meet the specific regulatory and operational demands of diverse global industries."
+            />
 
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8">
                 {industries.map((ind, i) => (
@@ -55,7 +48,7 @@ export const Industries = () => {
                             >
                                 {ind.icon}
                             </motion.div>
-                            <h3 className="font-semibold text-foreground relative z-10">{ind.name}</h3>
+                            <h3 className="font-semibold relative z-10">{ind.name}</h3>
                             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                         </motion.div>
                     </FadeIn>

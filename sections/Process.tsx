@@ -3,6 +3,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { ClipboardCheck, Palette, Code, Ship } from 'lucide-react';
+import { SectionHeader } from '@/components/layout/SectionHeader';
 
 const steps = [
     {
@@ -51,23 +52,10 @@ export const Process = () => {
             <div className="absolute bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-primary-deep/5 rounded-full blur-[120px] pointer-events-none" />
 
             <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">
-                <div className="text-center mb-24 max-w-2xl mx-auto">
-                    <motion.span
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block"
-                    >
-                        Workflow
-                    </motion.span>
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        className="text-3xl md:text-5xl font-bold mb-6 !leading-tight"
-                    >
-                        The Exceptional <br />
-                        <span className="text-gradient">Craftsmen of Digital</span>
-                    </motion.h2>
-                </div>
+                <SectionHeader 
+                    title={<>The Exceptional <br /><span className="text-gradient">Craftsmen of Digital</span></>}
+                    label="Workflow"
+                />
 
                 <div className="relative max-w-5xl mx-auto">
                     {/* Centered Scroll Line */}
@@ -121,8 +109,8 @@ export const Process = () => {
                                                     <div className="w-12 h-1 bg-primary/20 rounded-full" />
                                                 </div>
 
-                                                <h3 className="text-3xl font-black mb-4 text-foreground group-hover:text-primary transition-colors tracking-tight">{item.title}</h3>
-                                                <p className="text-muted-foreground leading-relaxed text-lg">
+                                                <h3 className="mb-4 group-hover:text-primary transition-colors">{item.title}</h3>
+                                                <p>
                                                     {item.desc}
                                                 </p>
                                             </div>

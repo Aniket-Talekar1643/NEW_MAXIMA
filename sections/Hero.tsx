@@ -152,8 +152,8 @@ export const Hero = () => {
                             <span className="text-xs font-bold text-primary tracking-widest uppercase">PUNE'S TOP IT AGENCY</span>
                         </div>
 
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold !leading-[1.1] tracking-tight mb-6 flex flex-col">
-                            <TextReveal text="Leading Software" />
+                        <h1 className="mb-6 flex flex-col">
+                            <TextReveal text="Cutting-Edge" />
                             <span className="text-primary truncate h-[1.2em]">
                                 <TextReveal text="Development Company" />
                             </span>
@@ -165,7 +165,7 @@ export const Hero = () => {
                             </span>
                         </h1>
 
-                        <p className="text-lg md:text-xl text-text-secondary mb-8 max-w-lg leading-relaxed min-h-[4rem] sm:min-h-[3.5rem] flex flex-col justify-center">
+                        <p className="mb-8 max-w-lg min-h-[4rem] sm:min-h-[3.5rem] flex flex-col justify-center">
                             <span>
                                 We are a results-driven software development company in Pune, specializing in{" "}
                                 <span className="relative inline-block overflow-hidden h-7 sm:h-8 align-middle">
@@ -191,21 +191,21 @@ export const Hero = () => {
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <MagneticButton>
-                                <Link href="/contact">
+                                <Link href="/contact" aria-label="Contact Maxima Business Solutions">
                                     <motion.button
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                         className="px-8 py-4 rounded-full bg-primary-gradient text-white font-bold text-lg shadow-xl shadow-primary/20 transition-all hover:shadow-primary/40 flex items-center gap-2"
                                     >
                                         <span>Contact Us</span>
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                         </svg>
                                     </motion.button>
                                 </Link>
                             </MagneticButton>
                             <MagneticButton strength={20}>
-                                <Link href="/services">
+                                <Link href="/services" aria-label="Explore our IT services">
                                     <motion.button
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
@@ -272,7 +272,7 @@ export const Hero = () => {
                                     className="absolute w-[200%] h-1 bg-gradient-to-r from-transparent via-white/50 to-transparent blur-sm -rotate-45"
                                 />
                                 <div className="rotate-[-45deg] flex flex-col items-center">
-                                    <div className="w-12 h-12 rounded-xl mb-2 overflow-hidden border border-primary/30">
+                                    <div className="w-12 h-12 rounded-xl mb-2 overflow-hidden border border-primary/30 relative">
                                         <video
                                             src="/Untitled design.mp4"
                                             autoPlay
@@ -280,6 +280,7 @@ export const Hero = () => {
                                             muted
                                             playsInline
                                             className="w-full h-full object-cover"
+                                            poster="/fallback-image.jpg"
                                         />
                                     </div>
                                     <span className="text-[10px] font-mono text-foreground/60 uppercase group-hover:text-primary transition-colors">

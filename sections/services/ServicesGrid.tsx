@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { SectionHeader } from '@/components/layout/SectionHeader';
 import {
     Code2,
     Layout,
@@ -52,37 +53,11 @@ export const ServicesGrid = () => {
             <div className="absolute bottom-1/4 -left-1/4 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
 
             <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10">
-                <div className="text-center mb-20">
-                    <motion.span
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block"
-                    >
-                        OUR SERVICES
-                    </motion.span>
-
-                    <motion.h2
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, type: "spring" }}
-                        className="text-4xl md:text-6xl font-extrabold mb-8 tracking-tight"
-                    >
-                        Need someone to{" "}
-                        <span className="relative inline-block text-primary">
-                            <span className="relative z-10">fuel</span>
-                            <motion.span
-                                initial={{ width: "0%" }}
-                                whileInView={{ width: "100%" }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
-                                className="absolute bottom-1 left-0 h-3 bg-primary/20 -z-10 -rotate-2"
-                            />
-                        </span>{" "}
-                        your idea?
-                    </motion.h2>
-                </div>
+                <SectionHeader 
+                    title={<>Need someone to <span className="relative inline-block text-primary"><span className="relative z-10 italic underline underline-offset-8">fuel</span></span> your idea?</>}
+                    label="OUR SERVICES"
+                    centered={true}
+                />
 
                 <motion.div
                     variants={containerVariants}
@@ -110,7 +85,7 @@ export const ServicesGrid = () => {
                                 <service.icon className="text-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300" size={36} />
                             </motion.div>
 
-                            <h3 className="text-2xl font-bold mb-4 text-foreground relative z-10">{service.title}</h3>
+                             <h3 className="mb-4 text-foreground relative z-10">{service.title}</h3>
                             <p className="text-muted-foreground leading-relaxed relative z-10">
                                 {service.desc}
                             </p>

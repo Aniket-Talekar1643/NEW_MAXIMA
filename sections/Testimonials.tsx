@@ -3,6 +3,7 @@
 import { FadeIn, SectionWrapper } from "@/components/layout/SectionWrapper";
 import { Star } from "lucide-react";
 import { motion } from "framer-motion";
+import { SectionHeader } from "@/components/layout/SectionHeader";
 
 const testimonials = [
     {
@@ -28,18 +29,10 @@ const testimonials = [
 export const Testimonials = () => {
     return (
         <SectionWrapper id="testimonials" className="bg-muted/30 text-foreground overflow-hidden">
-            <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-16">
-                <FadeIn>
-                    <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight mb-4">
-                        Client <span className="text-primary">Success Stories</span>
-                    </h2>
-                </FadeIn>
-                <FadeIn delay={0.1}>
-                    <p className="text-base sm:text-lg text-muted-foreground">
-                        Don&apos;t just take our word for it. Here is what global leaders are saying about partnering with Maxima Business Solutions.
-                    </p>
-                </FadeIn>
-            </div>
+            <SectionHeader 
+                title={<>Client <span className="text-primary">Success Stories</span></>}
+                subtitle="Don't just take our word for it. Here is what global leaders are saying about partnering with Maxima Business Solutions."
+            />
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {testimonials.map((testimonial, i) => (
@@ -54,7 +47,7 @@ export const Testimonials = () => {
                                     <Star key={j} className="w-4 h-4 sm:w-5 sm:h-5 fill-primary text-primary" />
                                 ))}
                             </div>
-                            <p className="text-muted-foreground flex-1 mb-6 sm:mb-8 relative z-10 text-balance leading-relaxed text-sm sm:text-base">
+                            <p className="flex-1 mb-6 sm:mb-8 relative z-10 text-balance text-sm sm:text-base">
                                 {testimonial.content}
                             </p>
                             <div className="mt-auto flex items-center gap-3 sm:gap-4 relative z-10">
@@ -63,7 +56,7 @@ export const Testimonials = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-xs sm:text-sm">{testimonial.name}</h4>
-                                    <p className="text-xs text-muted-foreground">{testimonial.role}</p>
+                                    <p className="text-xs">{testimonial.role}</p>
                                 </div>
                             </div>
                         </motion.div>

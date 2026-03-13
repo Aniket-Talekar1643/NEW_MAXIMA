@@ -15,8 +15,8 @@ export const ServicesCTA = () => {
                 >
                     <div className="absolute inset-0 bg-primary/10 blur-3xl rounded-full" />
                     <div className="relative z-10">
-                        <h2 className="text-3xl md:text-5xl font-bold mb-8">Ready to <span className="text-primary">transform</span> your business?</h2>
-                        <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+                        <h2 className="mb-8">Ready to <span className="text-primary">transform</span> your business?</h2>
+                        <p className="mb-12 max-w-2xl mx-auto">
                             Let's build something extraordinary together. Our team of experts is ready to bring your vision to life.
                         </p>
                         <Link href="/contact">

@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { SectionHeader } from '@/components/layout/SectionHeader';
 
 const SkillBar = ({ label, percentage, delay }: { label: string; percentage: number; delay: number }) => (
     <div className="space-y-2">
@@ -27,18 +28,14 @@ export const AboutSkills = () => {
         <section className="py-24 relative">
             <div className="container mx-auto px-6 md:px-12 lg:px-16">
                 <div className="grid lg:grid-cols-2 gap-20 items-center">
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true, margin: "-100px" }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Our Skills</span>
-                        <h2 className="text-3xl md:text-5xl font-bold mb-8 !leading-tight">Striving for <span className="text-primary">Excellence</span></h2>
-                        <p className="text-lg text-muted-foreground leading-relaxed mb-10">
-                            As a leading web development company in Pune, we never settle for just “good.”
-                            We constantly strive for excellence and improvement in all we do. That’s our promise.
-                        </p>
+
+                    <div>
+                        <SectionHeader 
+                            title={<>Striving for <span className="text-primary">Excellence</span></>}
+                            subtitle="As a leading web development company in Pune, we never settle for just “good.” We constantly strive for excellence and improvement in all we do. That’s our promise."
+                            label="Our Skills"
+                            centered={false}
+                        />
 
                         <div className="grid grid-cols-2 gap-6 mb-10">
                             {[
@@ -60,7 +57,7 @@ export const AboutSkills = () => {
                                 </motion.div>
                             ))}
                         </div>
-                    </motion.div>
+                    </div>
 
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
@@ -78,7 +75,7 @@ export const AboutSkills = () => {
                                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                                 </svg>
                             </div>
-                            <h3 className="text-2xl font-bold">Core Competencies</h3>
+                            <h3 className="font-bold">Core Competencies</h3>
                         </div>
 
                         <SkillBar label="Full Stack Development" percentage={100} delay={0.2} />

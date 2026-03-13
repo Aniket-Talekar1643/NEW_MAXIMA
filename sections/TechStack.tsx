@@ -2,6 +2,7 @@
 
 import { FadeIn, SectionWrapper } from "@/components/layout/SectionWrapper";
 import { motion, Variants } from "framer-motion";
+import { SectionHeader } from "@/components/layout/SectionHeader";
 import { useMediaQuery } from "@/hooks/media-query";
 
 const technologies = [
@@ -64,20 +65,11 @@ export const TechStack = () => {
 
     return (
         <SectionWrapper id="tech-stack" className="bg-primary/[0.04] border-y border-border/40 py-20 overflow-hidden">
-            <div className="container mx-auto px-6 md:px-12 lg:px-16 mb-16">
-                <div className="max-w-3xl">
-                    <FadeIn>
-                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">
-                            Modern <span className="text-primary">Tech Stack</span>
-                        </h2>
-                    </FadeIn>
-                    <FadeIn delay={0.1}>
-                        <p className="text-lg text-muted-foreground">
-                            As a leading MERN stack development company in Pune, we leverage enterprise-grade technologies to build fast, secure, and highly scalable applications that outpace the competition.
-                        </p>
-                    </FadeIn>
-                </div>
-            </div>
+                <SectionHeader 
+                    title={<>Modern <span className="text-primary">Tech Stack</span></>}
+                    subtitle="We leverage completely modern, enterprise-grade technologies to build fast, secure, and highly scalable applications that outpace the competition."
+                    centered={false}
+                />
 
             <div className="flex flex-col gap-8 md:gap-12">
                 {/* Row 1: Frontend & Backend */}
@@ -138,7 +130,7 @@ const TechCard = ({ tech, isSmall }: { tech: typeof technologies[0]; isSmall: bo
             />
 
             <div className="relative z-10">
-                <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center gap-3">
+                <h3>
                     <motion.div
                         variants={{
                             rest: { scale: 1, backgroundColor: "hsl(var(--primary)/0.6)" },
@@ -149,7 +141,7 @@ const TechCard = ({ tech, isSmall }: { tech: typeof technologies[0]; isSmall: bo
                     {tech.category}
                 </h3>
 
-                <p className="text-muted-foreground leading-relaxed mb-6 group-hover:text-foreground/90 transition-colors">
+                <p className="mb-6 group-hover:text-foreground/90 transition-colors">
                     {tech.description}
                 </p>
 

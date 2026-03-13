@@ -2,20 +2,17 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { SectionHeader } from '@/components/layout/SectionHeader';
 
 export const AboutLeadership = () => {
     return (
         <section className="py-24 relative">
             <div className="container mx-auto px-6 md:px-12 lg:px-16">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    className="text-center mb-20"
-                >
-                    <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">Leadership</span>
-                    <h2 className="text-3xl md:text-5xl font-bold !leading-tight">Guided by <span className="text-primary">Visionaries</span></h2>
-                </motion.div>
+                <SectionHeader 
+                    title={<>Guided by <span className="text-primary">Visionaries</span></>}
+                    label="Leadership"
+                    centered={true}
+                />
 
                 <div className="space-y-32">
                     {/* Profile 1: Rajesh Sivapalan */}
@@ -27,8 +24,8 @@ export const AboutLeadership = () => {
                             transition={{ duration: 0.8 }}
                         >
                             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Our Director</span>
-                            <h3 className="text-3xl md:text-4xl font-bold mb-6">Mr. Rajesh Sivapalan</h3>
-                            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                            <h3 className="mb-6">Mr. Rajesh Sivapalan</h3>
+                            <p className="mb-6">
                                 23 years of experience in the IT domain, Rajesh is a digital transformation enthusiast.
                                 Rajesh spent the last one and half decades assisting clients with their digital transformation journey—from
                                 a humble website designing to social media marketing, sophisticated mobile applications,
@@ -91,7 +88,7 @@ export const AboutLeadership = () => {
                             className="order-1 lg:order-2"
                         >
                             <span className="text-primary font-bold tracking-widest uppercase text-sm mb-2 block">Director – Strategy And Planning</span>
-                            <h3 className="text-3xl md:text-4xl font-bold mb-6">Brig Ajit Kapoor (Retd)</h3>
+                            <h3 className="text-2xl md:text-3xl font-bold mb-6">Brig Ajit Kapoor (Retd)</h3>
                             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
                                 34 years of experience in defence. A decorated Gunner Officer, who possesses precisely the
                                 experience and expertise needed to pinpoint and understand the needs of the opportunities

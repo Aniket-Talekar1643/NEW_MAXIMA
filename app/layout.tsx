@@ -4,11 +4,11 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { organizationSchema, localBusinessSchema } from "@/lib/schema";
 import { KeyboardWrapper } from "@/components/KeyboardWrapper";
-import { Preloader } from "@/components/Preloader";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://maximabusiness.com"),
   title: "Maxima Business Solutions | Top Software Development Company in Pune",
@@ -38,48 +38,6 @@ export const metadata: Metadata = {
   },
 };
 
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Maxima Business Solutions",
-  "url": "https://maximabusiness.com",
-  "logo": "https://maximabusiness.com/LOGO/mbs-logo-1.png",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+91-8856949454",
-    "contactType": "customer service",
-    "areaServed": "IN",
-    "availableLanguage": "en"
-  },
-  "sameAs": [
-    "https://www.linkedin.com/company/maxima-business-solutions",
-    "https://twitter.com/maximabusiness",
-    "https://facebook.com/maximabusiness"
-  ]
-};
-
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Maxima Business Solutions",
-  "image": "https://maximabusiness.com/LOGO/mbs-logo-1.png",
-  "url": "https://maximabusiness.com",
-  "telephone": "+91-8856949454",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Prime Tech Hub, Undri",
-    "addressLocality": "Pune",
-    "postalCode": "411060",
-    "addressCountry": "IN"
-  },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 18.5913,
-    "longitude": 73.7389
-  },
-  "priceRange": "$$"
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -96,6 +54,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
+        <script
+          src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+          async
+          defer
+        />
       </head>
       <body className={`${inter.variable} font-sans antialiased min-h-screen flex flex-col`}>
         <Preloader />
@@ -111,6 +74,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <KeyboardWrapper />
+          <Toaster position="top-right" richColors />
         </ThemeProvider>
       </body>
     </html>

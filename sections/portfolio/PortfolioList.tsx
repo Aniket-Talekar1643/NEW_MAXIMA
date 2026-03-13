@@ -59,7 +59,7 @@ const LaptopMockup = ({ image }: { image: string }) => (
     <div className="relative w-full max-w-[600px] mx-auto perspective-1000 group">
         {/* Screen */}
         <div className="relative bg-black rounded-t-xl border-[8px] border-zinc-800 dark:border-[#21262d] aspect-[16/10] overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-x-2">
-            <img src={image} alt="Project Screenshot" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+            <img src={image} alt={`Software Tech Success Story - ${image}`} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-white/10 pointer-events-none" />
             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         </div>
@@ -84,9 +84,9 @@ export const PortfolioList = () => {
                     transition={{ duration: 0.8 }}
                     className="max-w-xl mx-auto"
                 >
-                    <h2 className="text-2xl md:text-4xl font-bold mb-4 !leading-tight">Our Portfolio</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4 !leading-tight">Software Tech Success Stories</h2>
                     <p className="text-lg text-muted-foreground mb-8">
-                        Explore our recent projects and successful <br className="hidden md:block" /> client collaborations.
+                        Explore our software tech success stories and successful <br className="hidden md:block" /> client collaborations that drive digital growth.
                     </p>
                     <div className="w-24 h-1 bg-primary text-transparent mx-auto rounded-full bg-gradient-to-r from-primary to-primary/20" />
                 </motion.div>

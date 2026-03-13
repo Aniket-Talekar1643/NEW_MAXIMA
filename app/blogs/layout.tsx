@@ -1,12 +1,12 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Insights & Tech Blog | SEO Company in Pune - Maxima",
-  description: "Read the latest insights on MERN stack development, digital marketing trends, and AI technology from Maxima Business Solutions, Pune's top IT experts.",
-  keywords: ["Tech Blog Pune", "SEO Company in Pune Insights", "MERN Stack Tutorials", "Digital Marketing Trends India"],
+  title: "Tech Insights & Software Industry Blog | Maxima Solutions",
+  description: "Read our Tech Insights & Software Industry Blog for the latest on MERN stack, AI development, and digital growth strategies from our Pune experts.",
+  keywords: ["Tech Insights & Software Industry Blog", "MERN Stack Tutorials Pune", "Latest Web Trends India", "Software Engineering Blogs"],
   openGraph: {
-    title: "Insights & Tech Blog | Maxima Business Solutions",
-    description: "Stay up-to-date with industry insights and tech trends from our expert developers.",
+    title: "Tech Insights & Software Development Blog | Maxima",
+    description: "Stay up-to-date with industry insights and tech trends from our expert developers in Pune.",
     url: "https://maximabusiness.com/blogs",
   }
 };

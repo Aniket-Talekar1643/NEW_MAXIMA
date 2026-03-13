@@ -49,11 +49,8 @@ const GlobalOfficesSection: React.FC = () => {
                         </div>
 
                         {/* Heading */}
-<<<<<<< HEAD
-                        <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-foreground leading-tight tracking-tight mb-4">
-=======
+
                         <h2 className="text-4xl md:text-5xl xl:text-6xl font-bold text-white leading-tight tracking-tight mb-4">
->>>>>>> 2f18bbbf684597954effde1e1d9ac0505af2c18f
                             Our global{' '}
                             <span className="text-primary">footprint</span>
                         </h2>

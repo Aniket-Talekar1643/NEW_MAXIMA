@@ -20,7 +20,7 @@ export default function BlogDetailPage() {
         return (
             <main className="min-h-screen bg-background flex items-center justify-center">
                 <div className="text-center space-y-6">
-                    <h1 className="text-3xl font-bold">Blog not found</h1>
+                    <h1 className="text-4xl font-bold">Blog not found</h1>
                     <button
                         onClick={() => router.push('/blogs')}
                         className="bg-primary px-8 py-3 rounded-full text-white font-semibold hover:bg-primary/90 transition-colors"

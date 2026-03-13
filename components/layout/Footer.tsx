@@ -113,18 +113,27 @@ export const Footer = () => {
                     {/* Contact & Newsletter — full width on mobile */}
                     <div className="col-span-2 lg:col-span-1">
                         <h3 className="text-foreground font-semibold mb-4 sm:mb-6 text-sm">Get in Touch</h3>
-                        <ul className="flex flex-col gap-3 text-xs sm:text-sm mb-5">
-                            <li className="flex items-start gap-2 sm:gap-3">
-                                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0 mt-0.5" />
-                                <span>Pune, Maharashtra, India</span>
+                        <ul className="space-y-6">
+                            <li className="flex items-start gap-4 group">
+                                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                                    <MapPin size={18} />
+                                </div>
+                                <span className="text-muted-foreground leading-relaxed text-sm">
+                                    Prime Tech Hub, Undri,<br />
+                                    Pune, Maharashtra 411057
+                                </span>
                             </li>
-                            <li className="flex items-center gap-2 sm:gap-3">
-                                <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
-                                <span>+91 98765 43210</span>
+                            <li className="flex items-center gap-4 group">
+                                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                                    <Phone size={18} />
+                                </div>
+                                <span className="text-muted-foreground text-sm">+91 88569 49454</span>
                             </li>
-                            <li className="flex items-center gap-2 sm:gap-3">
-                                <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-primary shrink-0" />
-                                <span>hello@maximabusiness.com</span>
+                            <li className="flex items-center gap-4 group">
+                                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                                    <Mail size={18} />
+                                </div>
+                                <span className="text-muted-foreground text-sm">info@maximabs.com</span>
                             </li>
                         </ul>
 

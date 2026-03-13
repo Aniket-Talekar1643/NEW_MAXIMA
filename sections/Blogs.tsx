@@ -20,8 +20,8 @@ export const BlogsPreview = () => {
                     <div className="max-w-2xl">
                         <FadeIn>
                             <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Our Insights</span>
-                            <h2 className=" text-xl sm:text-2xl md:text-4xl font-bold tracking-tight mb-4">
-                                Latest from the <span className="text-gradient">Blog</span>
+                            <h2 className=" text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight mb-4">
+                                Latest from our <span className="text-gradient">Tech Insights & Software Industry Blog</span>
                             </h2>
                         </FadeIn>
                         <FadeIn delay={0.1}>
@@ -53,7 +53,7 @@ export const BlogsPreview = () => {
                                     <div className="aspect-[16/9] relative overflow-hidden">
                                         <Image
                                             src={blog.image}
-                                            alt={blog.title}
+                                            alt={`${blog.title} - Maxima Software Development Blog`}
                                             fill
                                             className="object-cover transition-transform duration-500 group-hover:scale-105"
                                         />

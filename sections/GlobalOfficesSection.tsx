@@ -49,17 +49,13 @@ const GlobalOfficesSection: React.FC = () => {
                         </div>
 
                         {/* Heading */}
-<<<<<<< HEAD
-                        <h2 className="text-3xl md:text-4xl xl:text-5xl font-bold text-foreground leading-tight tracking-tight mb-4">
-=======
-                        <h2 className="text-4xl md:text-5xl xl:text-6xl font-bold text-white leading-tight tracking-tight mb-4">
->>>>>>> 2f18bbbf684597954effde1e1d9ac0505af2c18f
+                        <h2 className="text-white mb-4">
                             Our global{' '}
                             <span className="text-primary">footprint</span>
                         </h2>
 
                         {/* Subheading */}
-                        <p className="text-lg text-text-secondary leading-relaxed mb-10 max-w-md mx-auto lg:mx-0">
+                        <p className="mb-10 max-w-md mx-auto lg:mx-0">
                             Our strategic headquarters in Pune serves as the heartbeat of our operations, 
                             enabling us to deliver excellence to clients worldwide.
                         </p>

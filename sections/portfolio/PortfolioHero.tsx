@@ -27,7 +27,7 @@ export const PortfolioHero = () => {
                         SHOWCASE
                     </motion.div>
 
-                    <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-8 !leading-tight tracking-tight">
+                    <h1 className="mb-8">
                         Explore Our <span className="text-primary relative inline-block z-10 pb-6">
                             Software Projects
                             <motion.svg className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[80%] text-primary -z-10" viewBox="0 0 100 20" preserveAspectRatio="none">
@@ -39,9 +39,8 @@ export const PortfolioHero = () => {
                             </motion.svg>
                         </span>
                     </h1>
-                    <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                        From startups to enterprises, discover the digital products we’ve
-                        designed and developed to drive growth and innovation.
+                    <p className="max-w-3xl mx-auto">
+                        We don&apos;t just build applications; we engineer digital experiences that drive business results. From MERN stack platforms to AI-driven tools, explore our latest work.
                     </p>
                 </motion.div>
             </div>

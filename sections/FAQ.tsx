@@ -8,7 +8,11 @@ import { SectionHeader } from "@/components/layout/SectionHeader";
 
 const faqs = [
     {
-        question: "What services does Maxima Business Solutions provide?",
+        question: "Why chose Maxima as your software development company in Pune?",
+        answer: "As a leading software development company in Pune, Maxima Business Solutions offers a unique blend of global expertise and local market understanding. We specialize in MERN stack, mobile apps, and digital transformation, providing tailored solutions from our Prime Tech Hub HQ in Undri."
+    },
+    {
+        question: "What services does Maxima provide?",
         answer: "We offer a comprehensive range of digital IT solutions, including MERN stack development, custom software engineering, cloud transformation (AWS/Azure), digital marketing, and enterprise-grade SEO strategies."
     },
     {

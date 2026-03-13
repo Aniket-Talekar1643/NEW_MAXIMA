@@ -1,9 +1,11 @@
 import { PortfolioHero } from "@/sections/portfolio/PortfolioHero";
 import { PortfolioList } from "@/sections/portfolio/PortfolioList";
+import type { Metadata } from "next";
 
-export const metadata = {
-    title: "Portfolio | Maxima Business Solutions",
-    description: "Explore our recent software projects and successful client collaborations.",
+export const metadata: Metadata = {
+  title: "Software Tech Success Stories & Case Studies | Maxima Solutions",
+  description: "Browse our software tech success stories and project case studies. See how we help clients in Pune and globally achieve digital excellence.",
+  keywords: ["Software Tech Success Stories", "IT Case Studies Pune", "Digital Product Showcases", "Tech Project Portfolio"],
 };
 
 export default function PortfolioPage() {

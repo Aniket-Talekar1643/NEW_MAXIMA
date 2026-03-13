@@ -1,12 +1,12 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Maxima Business Solutions Pune",
-  description: "Get in touch with Maxima Business Solutions. Reach out to our expert team for web development, digital marketing, and IT consulting in Pune.",
-  keywords: ["Contact IT Solutions Pune", "Web Development Agency Contact", "Maxima Business Solutions Contact", "IT Consulting Pune"],
+    title: "Hire Dedicated Software Developers in Pune | Contact Maxima",
+    description: "Looking to hire dedicated software developers in Pune? Contact Maxima Business Solutions today for expert IT consultation and custom software builds.",
+    keywords: ["Hire Dedicated Software Developers Pune", "Contact IT Specialists Pune", "Get IT Consultation", "Software Development Inquiry"],
   openGraph: {
-    title: "Contact Maxima Business Solutions",
-    description: "Start your digital transformation journey today. Let's discuss your next project.",
+    title: "Contact Maxima Business Solutions | Hire Experts in Pune",
+    description: "Start your digital transformation journey today. Let's discuss your next project with Pune's top IT team.",
     url: "https://maximabusiness.com/contact",
   }
 };

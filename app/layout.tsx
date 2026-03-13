@@ -11,9 +11,9 @@ import { Toaster } from "sonner";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   metadataBase: new URL("https://maximabusiness.com"),
-  title: "Maxima Business Solutions | Top IT & Digital Transformation Company in Pune",
-  description: "Maxima Business Solutions is a cutting-edge digital IT solutions company in Pune providing MERN stack development, digital marketing, and cloud services.",
-  keywords: ["Web Development Company in Pune", "MERN Stack Development Company Pune", "Digital Transformation Company Pune", "IT Solutions Company Pune"],
+  title: "Maxima Business Solutions | Top Software Development Company in Pune",
+  description: "Maxima Business Solutions is a premier software development company in Pune. Expertise in MERN stack, mobile apps, digital transformation, and SEO solutions.",
+  keywords: ["Software Development Company in Pune", "Web Development Company in Pune", "MERN Stack Development Pune", "Digital Transformation Company Pune", "Custom Software Solutions Pune", "IT Services Pune"],
   openGraph: {
     title: "Maxima Business Solutions | IT Services in Pune",
     description: "Scalable, innovative digital solutions helping modern businesses grow and succeed.",
@@ -61,6 +61,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} font-sans antialiased min-h-screen flex flex-col`}>
+        <Preloader />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

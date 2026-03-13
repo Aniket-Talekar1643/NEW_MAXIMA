@@ -53,7 +53,7 @@ export const BlogsPreview = () => {
                                     <div className="aspect-[16/9] relative overflow-hidden">
                                         <Image
                                             src={blog.image}
-                                            alt={blog.title}
+                                            alt={`${blog.title} - Maxima Software Development Blog`}
                                             fill
                                             className="object-cover transition-transform duration-500 group-hover:scale-105"
                                         />

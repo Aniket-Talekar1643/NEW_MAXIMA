@@ -8,7 +8,7 @@ const LaptopMockup = ({ image }: { image: string }) => (
     <div className="relative w-full max-w-[600px] mx-auto perspective-1000 group">
         {/* Screen */}
         <div className="relative bg-black rounded-t-xl border-[8px] border-zinc-800 dark:border-[#21262d] aspect-[16/10] overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-2 group-hover:rotate-x-2">
-            <img src={image} alt="Project Screenshot" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+            <img src={image} alt={`Software Tech Success Story - ${image}`} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
             <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-white/10 pointer-events-none" />
             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/60 to-transparent pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         </div>

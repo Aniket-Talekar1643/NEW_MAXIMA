@@ -37,7 +37,7 @@ export const AboutHero = () => {
                                     transition={{ duration: 1, delay: 0.8 }}
                                 />
                             </motion.svg>
-                        </span> Web Development Company in Pune
+                        </span> IT Outsourcing Agency in Pune
                     </h1>
                     <p className="max-w-3xl mx-auto">
                         At Maxima Business Solutions, a forward-thinking web development company in Pune,

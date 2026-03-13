@@ -113,12 +113,12 @@ export const About = () => {
                         <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
                             About Us
                         </span>
-                        <h2 className="text-2xl md:text-4xl font-bold mb-6 !leading-tight">
+                        <h2 className="mb-6">
                             MERN Stack Development, <br />
                             <span className="text-primary">Digital IT Solutions</span> <br />
                             Company in Pune.
                         </h2>
-                        <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                        <p className="mb-8">
                             We understand your business is unique and deserves personalized support.
                             As a trusted global IT solutions company based in Pune, we specialize in branding,
                             digital marketing, mobile and web app development, all tailored to drive your growth.

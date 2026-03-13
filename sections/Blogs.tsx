@@ -20,12 +20,12 @@ export const BlogsPreview = () => {
                     <div className="max-w-2xl">
                         <FadeIn>
                             <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Our Insights</span>
-                            <h2 className=" text-xl sm:text-2xl md:text-4xl font-bold tracking-tight mb-4">
+                            <h2>
                                 Latest from the <span className="text-gradient">Blog</span>
                             </h2>
                         </FadeIn>
                         <FadeIn delay={0.1}>
-                            <p className="text-sm sm:text-base md:text-lg text-muted-foreground">
+                            <p>
                                 Stay ahead of the curve with our expert analysis on MERN stack, AI integration, and digital growth strategies.
                             </p>
                         </FadeIn>
@@ -71,11 +71,11 @@ export const BlogsPreview = () => {
                                             </span>
                                         </div>
 
-                                        <h3 className="text-base sm:text-lg font-bold text-foreground group-hover:text-primary transition-colors leading-snug line-clamp-2 mb-3">
+                                        <h3 className="line-clamp-2 mb-3">
                                             {blog.title}
                                         </h3>
 
-                                        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3 flex-grow">
+                                        <p className="text-sm line-clamp-3 flex-grow">
                                             {blog.excerpt || "Read the full article to discover insights from our expert team at Maxima Business Solutions."}
                                         </p>
 

@@ -6,45 +6,64 @@ import * as z from "zod";
 import { FadeIn, SectionWrapper } from "@/components/layout/SectionWrapper";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+import { submitEnquiry } from "@/lib/api";
 
 const formSchema = z.object({
     name: z.string().min(2, "Name must be at least 2 characters"),
     email: z.string().email("Invalid email address"),
     subject: z.string().min(5, "Subject must be at least 5 characters"),
     message: z.string().min(10, "Message must be at least 10 characters"),
+    token: z.string().min(1, "reCAPTCHA verification is required"),
 });
 
 type FormValues = z.infer<typeof formSchema>;
 
 export default function ContactPage() {
     const [submitError, setSubmitError] = useState<string | null>(null);
+    const [recaptchaLoaded, setRecaptchaLoaded] = useState(false);
     const {
         register,
         handleSubmit,
         formState: { errors, isSubmitting, isSubmitSuccessful },
         reset,
+        setValue,
+        watch,
     } = useForm<FormValues>({
         resolver: zodResolver(formSchema),
     });
 
+    useEffect(() => {
+        // Check if reCAPTCHA is loaded
+        const checkRecaptcha = () => {
+            if (window.grecaptcha) {
+                setRecaptchaLoaded(true);
+                // Set up reCAPTCHA callback
+                window.grecaptcha.ready(() => {
+                    setRecaptchaLoaded(true);
+                });
+            } else {
+                setTimeout(checkRecaptcha, 100);
+            }
+        };
+        checkRecaptcha();
+    }, []);
+
     const onSubmit = async (data: FormValues) => {
         setSubmitError(null);
         try {
-            const response = await fetch("/api/contact", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data),
-            });
-
-            if (!response.ok) {
-                throw new Error("Failed to send message");
+            // Get reCAPTCHA token before submitting
+            if (window.grecaptcha && process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY) {
+                const token = await window.grecaptcha.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY, { action: 'submit' });
+                data.token = token;
             }
-
+            
+            await submitEnquiry(data);
             reset();
-        } catch (err) {
+        } catch (err: any) {
             console.error(err);
-            setSubmitError("Failed to send message. Please try again later.");
+            setSubmitError(err.message || "Failed to send message. Please try again later.");
         }
     };
 
@@ -54,10 +73,10 @@ export default function ContactPage() {
             <SectionWrapper className="pb-12">
                 <FadeIn>
                     <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Get In Touch</span>
-                    <h1 className="text-3xl md:text-5xl font-bold mb-6 tracking-tight">
+                    <h1>
                         Let&apos;s Build Something <span className="text-primary">Exceptional</span> Together
                     </h1>
-                    <p className="text-lg text-muted-foreground max-w-2xl">
+                    <p className="max-w-2xl">
                         Have a project in mind? We&apos;d love to hear from you. Our team of experts is ready to help you navigate your digital transformation journey.
                     </p>
                 </FadeIn>
@@ -74,8 +93,8 @@ export default function ContactPage() {
                                         <MapPin className="w-6 h-6" />
                                     </div>
                                     <div>
-                                        <h3 className="font-bold text-lg mb-2">Our Headquarters</h3>
-                                        <p className="text-muted-foreground text-sm leading-relaxed">
+                                        <h3 className="mb-2">Our Headquarters</h3>
+                                        <p className="text-sm">
                                             Pune, Maharashtra, India<br />
                                             Prime Tech Hub, Hinjewadi
                                         </p>
@@ -87,8 +106,8 @@ export default function ContactPage() {
                                         <Phone className="w-6 h-6" />
                                     </div>
                                     <div>
-                                        <h3 className="font-bold text-lg mb-2">Call Us</h3>
-                                        <p className="text-muted-foreground text-sm leading-relaxed">
+                                        <h3 className="mb-2">Call Us</h3>
+                                        <p className="text-sm">
                                             General Enquiries: +91 88569 49454<br />
                                             Sales: +91 88569 49454
                                         </p>
@@ -100,8 +119,8 @@ export default function ContactPage() {
                                         <Mail className="w-6 h-6" />
                                     </div>
                                     <div>
-                                        <h3 className="font-bold text-lg mb-2">Email Us</h3>
-                                        <p className="text-muted-foreground text-sm leading-relaxed">
+                                        <h3 className="mb-2">Email Us</h3>
+                                        <p className="text-sm">
                                             info@maximabs.com<br />
                                             careers@maximabs.com
                                         </p>
@@ -113,8 +132,8 @@ export default function ContactPage() {
                                         <Clock className="w-6 h-6" />
                                     </div>
                                     <div>
-                                        <h3 className="font-bold text-lg mb-2">Working Hours</h3>
-                                        <p className="text-muted-foreground text-sm leading-relaxed">
+                                        <h3 className="mb-2">Working Hours</h3>
+                                        <p className="text-sm">
                                             Mon - Fri: 10:00 AM - 7:00 PM<br />
                                             Sat - Sun: Closed
                                         </p>
@@ -131,7 +150,7 @@ export default function ContactPage() {
                         <div className="bg-card border border-border p-8 md:p-12 rounded-[2rem] shadow-sm relative overflow-hidden group">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-[5rem] -z-10 transition-transform group-hover:scale-110" />
                             
-                            <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
+                            <h2>Send us a Message</h2>
 
                             {isSubmitSuccessful && (
                                 <div className="mb-6 p-4 bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 rounded-lg">
@@ -189,7 +208,7 @@ export default function ContactPage() {
 
                                 <Button 
                                     type="submit" 
-                                    disabled={isSubmitting} 
+                                    disabled={isSubmitting || !recaptchaLoaded} 
                                     className="w-full py-6 rounded-xl font-bold group"
                                 >
                                     {isSubmitting ? "Sending..." : "Send Message"}

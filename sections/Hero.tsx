@@ -153,21 +153,21 @@ export const Hero = () => {
                         </div>
 
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold !leading-[1.1] tracking-tight mb-6 flex flex-col">
-                            <TextReveal text="Cutting-Edge" />
+                            <TextReveal text="Leading Software" />
                             <span className="text-primary truncate h-[1.2em]">
-                                <TextReveal text="Digital IT Solutions" />
+                                <TextReveal text="Development Company" />
                             </span>
                             <span className="flex flex-wrap items-center">
-                                <TextReveal text="for Modern " />
+                                <TextReveal text="in " />
                                 <span className="text-gradient ml-2">
-                                    <TextReveal text="Businesses" />
+                                    <TextReveal text="Pune" />
                                 </span>
                             </span>
                         </h1>
 
                         <p className="text-lg md:text-xl text-text-secondary mb-8 max-w-lg leading-relaxed min-h-[4rem] sm:min-h-[3.5rem] flex flex-col justify-center">
                             <span>
-                                We are a results-driven IT solutions company in Pune, offering{" "}
+                                We are a results-driven software development company in Pune, specializing in{" "}
                                 <span className="relative inline-block overflow-hidden h-7 sm:h-8 align-middle">
                                     <motion.span
                                         key="animated-text"
@@ -186,7 +186,7 @@ export const Hero = () => {
                                         <span className="h-7 sm:h-8 text-primary-accent">AI-Driven Applications</span>
                                     </motion.span>
                                 </span>
-                                , digital marketing, cloud services, and more.
+                                , digital marketing, and transformation.
                             </span>
                         </p>
                         <div className="flex flex-wrap gap-4">
@@ -282,7 +282,9 @@ export const Hero = () => {
                                             className="w-full h-full object-cover"
                                         />
                                     </div>
-                                    <span className="text-[10px] font-mono text-foreground/60">CORE ENGINE</span>
+                                    <span className="text-[10px] font-mono text-foreground/60 uppercase group-hover:text-primary transition-colors">
+                                        Software Development Company in Pune
+                                    </span>
                                 </div>
                             </div>
 

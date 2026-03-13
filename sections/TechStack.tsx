@@ -73,7 +73,7 @@ export const TechStack = () => {
                     </FadeIn>
                     <FadeIn delay={0.1}>
                         <p className="text-lg text-muted-foreground">
-                            We leverage completely modern, enterprise-grade technologies to build fast, secure, and highly scalable applications that outpace the competition.
+                            As a leading MERN stack development company in Pune, we leverage enterprise-grade technologies to build fast, secure, and highly scalable applications that outpace the competition.
                         </p>
                     </FadeIn>
                 </div>

@@ -17,12 +17,13 @@ export const LeadGen = () => {
                     <div>
                         <FadeIn>
                             <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight mb-4 sm:mb-6">
-                                Ready to transform your <span className="text-primary">Digital Presence?</span>
+                                Ready to scale with Pune&apos;s Best <span className="text-primary">Software Team?</span>
                             </h2>
                         </FadeIn>
                         <FadeIn delay={0.1}>
                             <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 text-balance">
-                                Book a free 30-minute consultation with our technology experts. We&apos;ll analyze your current setup and provide a roadmap for digital growth.
+                                Book a free 30-minute consultation with our software development experts in Pune. 
+                                We&apos;ll help you architect a roadmap for your next digital breakthrough.
                             </p>
                         </FadeIn>
 

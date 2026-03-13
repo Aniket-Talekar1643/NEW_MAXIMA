@@ -114,14 +114,14 @@ export const About = () => {
                             About Us
                         </span>
                         <h2 className="text-3xl md:text-5xl font-bold mb-6 !leading-tight">
-                            MERN Stack Development, <br />
-                            <span className="text-primary">Digital IT Solutions</span> <br />
-                            Company in Pune.
+                            MERN Stack & <br />
+                            <span className="text-primary">Software Development</span> <br />
+                            Experts in Pune.
                         </h2>
                         <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                            We understand your business is unique and deserves personalized support.
-                            As a trusted global IT solutions company based in Pune, we specialize in branding,
-                            digital marketing, mobile and web app development, all tailored to drive your growth.
+                            At Maxima, we believe every business is unique. As a premier software development company in Pune,
+                            we specialize in MERN stack, mobile apps, and digital transformation—crafting 
+                            high-performance solutions that drive global growth.
                         </p>
                         <Link href="/about">
                             <motion.button

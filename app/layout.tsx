@@ -5,14 +5,15 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { KeyboardWrapper } from "@/components/KeyboardWrapper";
+import { Preloader } from "@/components/Preloader";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://maximabusiness.com"),
-  title: "Maxima Business Solutions | Top IT & Digital Transformation Company in Pune",
-  description: "Maxima Business Solutions is a cutting-edge digital IT solutions company in Pune providing MERN stack development, digital marketing, and cloud services.",
-  keywords: ["Web Development Company in Pune", "MERN Stack Development Company Pune", "Digital Transformation Company Pune", "IT Solutions Company Pune"],
+  title: "Maxima Business Solutions | Top Software Development Company in Pune",
+  description: "Maxima Business Solutions is a premier software development company in Pune. Expertise in MERN stack, mobile apps, digital transformation, and SEO solutions.",
+  keywords: ["Software Development Company in Pune", "Web Development Company in Pune", "MERN Stack Development Pune", "Digital Transformation Company Pune", "Custom Software Solutions Pune", "IT Services Pune"],
   openGraph: {
     title: "Maxima Business Solutions | IT Services in Pune",
     description: "Scalable, innovative digital solutions helping modern businesses grow and succeed.",
@@ -45,14 +46,15 @@ const organizationSchema = {
   "logo": "https://maximabusiness.com/LOGO/mbs-logo-1.png",
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+91-9876543210", // Placeholder, update with real phone
+    "telephone": "+91-8856949454",
     "contactType": "customer service",
     "areaServed": "IN",
     "availableLanguage": "en"
   },
   "sameAs": [
     "https://www.linkedin.com/company/maxima-business-solutions",
-    "https://twitter.com/maximabusiness"
+    "https://twitter.com/maximabusiness",
+    "https://facebook.com/maximabusiness"
   ]
 };
 
@@ -62,18 +64,18 @@ const localBusinessSchema = {
   "name": "Maxima Business Solutions",
   "image": "https://maximabusiness.com/LOGO/mbs-logo-1.png",
   "url": "https://maximabusiness.com",
-  "telephone": "+91-9876543210", // Placeholder
+  "telephone": "+91-8856949454",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "IT Park, Kharadi", // Placeholder
+    "streetAddress": "Prime Tech Hub, Undri",
     "addressLocality": "Pune",
-    "postalCode": "411014", // Placeholder
+    "postalCode": "411060",
     "addressCountry": "IN"
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 18.5204,
-    "longitude": 73.8567
+    "latitude": 18.5913,
+    "longitude": 73.7389
   },
   "priceRange": "$$"
 };
@@ -96,6 +98,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} font-sans antialiased min-h-screen flex flex-col`}>
+        <Preloader />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

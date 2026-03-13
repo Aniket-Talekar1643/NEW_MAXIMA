@@ -5,12 +5,12 @@ import { AboutWhoWeAre } from "@/sections/about/AboutWhoWeAre";
 import { AboutSkills } from "@/sections/about/AboutSkills";
 
 export const metadata: Metadata = {
-  title: "About Us | Top Web Development Company in Pune - Maxima",
-  description: "Learn about Maxima Business Solutions, Pune's premier web development and digital transformation agency. Discover our vision, leadership, and expertise.",
-  keywords: ["Web Development Company in Pune", "IT Agency Pune", "Maxima Business Solutions Team", "Digital Agency India"],
+  title: "Trusted IT Outsourcing Agency Pune | Maxima Business Solutions",
+  description: "Learn how Maxima, a trusted IT outsourcing agency in Pune, drives digital transformation. Our expert team delivers scalable software excellence.",
+  keywords: ["Trusted IT Outsourcing Agency Pune", "Digital Transformation Company Pune", "Software Engineering Expertise", "IT Partner India"],
   openGraph: {
-    title: "About Maxima Business Solutions",
-    description: "Driving innovation & growth as a leading IT solutions company in Pune.",
+    title: "Trusted IT Outsourcing Agency & Digital Transformation Partner",
+    description: "Driving innovation & growth as a leading IT outsourcing agency in Pune.",
     url: "https://maximabusiness.com/about",
   }
 };

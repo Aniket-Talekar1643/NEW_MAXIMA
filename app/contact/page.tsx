@@ -55,10 +55,11 @@ export default function ContactPage() {
                 <FadeIn>
                     <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Get In Touch</span>
                     <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
-                        Let&apos;s Build Something <span className="text-primary">Exceptional</span> Together
+                        Hire Dedicated <span className="text-primary">Software Developers in Pune</span>
                     </h1>
                     <p className="text-lg text-muted-foreground max-w-2xl">
-                        Have a project in mind? We&apos;d love to hear from you. Our team of experts is ready to help you navigate your digital transformation journey.
+                        Looking to hire dedicated software developers in Pune? We&apos;d love to hear from you. 
+                        Our team of experts is ready to help you navigate your digital transformation journey.
                     </p>
                 </FadeIn>
             </SectionWrapper>
@@ -77,7 +78,7 @@ export default function ContactPage() {
                                         <h3 className="font-bold text-lg mb-2">Our Headquarters</h3>
                                         <p className="text-muted-foreground text-sm leading-relaxed">
                                             Pune, Maharashtra, India<br />
-                                            Prime Tech Hub, Hinjewadi
+                                            Prime Tech Hub, Undri
                                         </p>
                                     </div>
                                 </div>

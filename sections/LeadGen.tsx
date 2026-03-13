@@ -59,7 +59,7 @@ export const LeadGen = () => {
 
                     <FadeIn delay={0.2} direction="left" className="lg:justify-self-end w-full max-w-md">
                         <div className="bg-background border border-border rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-xl shadow-primary/5">
-                            <h3 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">Get your Free Proposal</h3>
+                            <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2">Get your Free Proposal</h3>
                             <p className="text-muted-foreground text-xs sm:text-sm mb-4 sm:mb-6">Fill out the form below and we&apos;ll get back to you within 24 hours.</p>
 
                             <form className="space-y-3 sm:space-y-4" onSubmit={(e) => e.preventDefault()}>

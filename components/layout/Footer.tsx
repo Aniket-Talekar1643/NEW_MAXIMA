@@ -1,9 +1,44 @@
-import Link from "next/link";
-import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone } from "lucide-react";
+"use client"
+import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin, Phone, Loader2 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import { toast } from "sonner";
 
 export const Footer = () => {
+    const [email, setEmail] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsLoading(true);
+
+        try {
+            const response = await fetch("/api/subscribe", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ email }),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                toast.success("Subscribed successfully!");
+                setEmail("");
+            } else {
+                toast.error(data.error || "Failed to subscribe");
+            }
+        } catch (error) {
+            toast.error("Something went wrong. Please try again.");
+            console.error(error);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
     return (
         <footer className="bg-background/95 backdrop-blur-md text-muted-foreground pt-14 sm:pt-16 pb-6 sm:pb-8 border-t border-border/10">
             <div className="container mx-auto px-6 md:px-12 lg:px-16">
@@ -45,10 +80,9 @@ export const Footer = () => {
                             {[
                                 { href: "/about", label: "About Us" },
                                 { href: "/services", label: "Services" },
-                                { href: "/technologies", label: "Technologies" },
-                                { href: "/process", label: "Our Process" },
-                                { href: "/case-studies", label: "Case Studies" },
-                                { href: "/careers", label: "Careers" },
+                                { href: "/portfolio", label: "Portfolio" },
+                                { href: "/blogs", label: "Blogs" },
+                                { href: "/contact", label: "Contact" },
                             ].map(({ href, label }) => (
                                 <li key={label}>
                                     <Link href={href} className="hover:text-primary transition-colors">{label}</Link>
@@ -105,15 +139,20 @@ export const Footer = () => {
 
                         <div className="space-y-2">
                             <p className="text-xs sm:text-sm font-medium text-foreground">Subscribe to our newsletter</p>
-                            <form className="flex gap-2">
+                            <form className="flex gap-2" onSubmit={handleSubmit}>
                                 <input
                                     type="email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
                                     placeholder="Enter your email"
                                     aria-label="Email address for newsletter"
                                     className="bg-white/5 border border-white/10 rounded-md px-3 py-2 text-xs sm:text-sm w-full focus:outline-none focus:ring-1 focus:ring-primary"
                                     required
+                                    disabled={isLoading}
                                 />
-                                <Button type="submit" size="sm" className="shrink-0 text-xs sm:text-sm">Go</Button>
+                                <Button type="submit" size="sm" className="shrink-0 text-xs sm:text-sm" disabled={isLoading}>
+                                    {isLoading ? <Loader2 className="w-3 h-3 animate-spin" /> : "Go"}
+                                </Button>
                             </form>
                         </div>
                     </div>

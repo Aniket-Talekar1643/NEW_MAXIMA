@@ -8,7 +8,7 @@ export const ServicesTestimonials = () => {
             <div className="container mx-auto px-6 md:px-12 lg:px-16">
                 <div className="text-center mb-16">
                     <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">CLIENT TESTIMONIALS</span>
-                    <h2 className="text-3xl md:text-5xl font-bold !leading-tight">See what our <span className="text-primary">clients say</span></h2>
+                    <h2 className="text-2xl md:text-4xl font-bold !leading-tight">See what our <span className="text-primary">clients say</span></h2>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8">

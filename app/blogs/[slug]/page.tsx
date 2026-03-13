@@ -81,7 +81,7 @@ export default function BlogDetailPage() {
                         </div>
 
                         {/* Title */}
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6">
+                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-6">
                             {blog.title}
                         </h1>
 
@@ -226,7 +226,7 @@ export default function BlogDetailPage() {
             <section className="py-16 bg-muted/20 border-t border-border">
                 <div className="container mx-auto px-6 md:px-12 lg:px-16">
                     <div className="flex items-center justify-between mb-10">
-                        <h2 className="text-2xl md:text-3xl font-bold">More <span className="text-primary">Insights</span></h2>
+                        <h2 className="text-xl md:text-2xl font-bold">More <span className="text-primary">Insights</span></h2>
                         <Link href="/blogs" className="text-sm font-semibold text-primary hover:underline underline-offset-4 flex items-center gap-1 group">
                             View all <ChevronRight size={15} className="group-hover:translate-x-1 transition-transform" />
                         </Link>

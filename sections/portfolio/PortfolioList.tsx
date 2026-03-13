@@ -114,7 +114,7 @@ export const PortfolioList = () => {
                                         <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                                         Featured Project
                                     </motion.div>
-                                    <h3 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground !leading-tight tracking-tight">
+                                    <h3 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground !leading-tight tracking-tight">
                                         {project.name}
                                     </h3>
                                     <p className="text-xl text-muted-foreground leading-relaxed max-w-xl mx-auto lg:mx-0">

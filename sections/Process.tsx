@@ -121,7 +121,7 @@ export const Process = () => {
                                                     <div className="w-12 h-1 bg-primary/20 rounded-full" />
                                                 </div>
 
-                                                <h3 className="text-3xl font-black mb-4 text-foreground group-hover:text-primary transition-colors tracking-tight">{item.title}</h3>
+                                                <h3 className="text-2xl font-black mb-4 text-foreground group-hover:text-primary transition-colors tracking-tight">{item.title}</h3>
                                                 <p className="text-muted-foreground leading-relaxed text-lg">
                                                     {item.desc}
                                                 </p>

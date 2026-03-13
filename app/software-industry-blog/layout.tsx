@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Tech Insights & Software Development Blog | Maxima",
     description: "Stay up-to-date with industry insights and tech trends from our expert developers in Pune.",
-    url: "https://maximabusiness.com/blogs",
+    url: "https://maximabusiness.com/software-industry-blog",
   }
 };
 

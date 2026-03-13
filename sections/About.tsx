@@ -123,7 +123,7 @@ export const About = () => {
                             we specialize in MERN stack, mobile apps, and digital transformation—crafting 
                             high-performance solutions that drive global growth.
                         </p>
-                        <Link href="/about">
+                        <Link href="/it-outsourcing-agency-pune">
                             <motion.button
                                 whileHover={{ x: 10 }}
                                 className="group flex items-center space-x-2 text-foreground font-bold text-lg"

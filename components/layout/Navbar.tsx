@@ -12,10 +12,10 @@ import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 
 const navLinks = [
     { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Portfolio", href: "/portfolio" },
-    { name: "Blogs", href: "/blogs" },
+    { name: "About", href: "/it-outsourcing-agency-pune" },
+    { name: "Services", href: "/software-development-services-pune" },
+    { name: "Portfolio", href: "/web-development-portfolio" },
+    { name: "Blogs", href: "/software-industry-blog" },
 ];
 
 export const Navbar = () => {
@@ -118,7 +118,7 @@ export const Navbar = () => {
                     <ThemeSwitcher />
                     <MagneticButton strength={12}>
                         <Button asChild className="rounded-3xl px-8 h-10 bg-primary-gradient text-white border border-white/10 shadow-xl shadow-primary/20 hover:shadow-primary/40 group overflow-hidden transition-all hover:scale-105 active:scale-95">
-                            <Link href="/contact">
+                            <Link href="/hire-software-developers-pune">
                                 <span className="relative z-10 flex items-center font-bold text-sm tracking-wide">
                                     Let's Connect <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                                 </span>
@@ -175,7 +175,7 @@ export const Navbar = () => {
                                 transition={{ delay: 0.3 }}
                                 className="pt-6 border-t border-border"
                             >
-                                <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                                <Link href="/hire-software-developers-pune" onClick={() => setIsMobileMenuOpen(false)}>
                                     <Button className="w-full h-14 rounded-2xl bg-primary-gradient text-lg font-bold text-white">
                                         Let's Talk
                                     </Button>

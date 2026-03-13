@@ -78,7 +78,7 @@ export default function ContactPage() {
                                         <h3 className="font-bold text-lg mb-2">Our Headquarters</h3>
                                         <p className="text-muted-foreground text-sm leading-relaxed">
                                             Pune, Maharashtra, India<br />
-                                            Prime Tech Hub, Undri
+                                            Undri
                                         </p>
                                     </div>
                                 </div>

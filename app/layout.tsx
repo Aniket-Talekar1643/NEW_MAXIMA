@@ -5,7 +5,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { KeyboardWrapper } from "@/components/KeyboardWrapper";
-import { Preloader } from "@/components/Preloader";
+
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -67,7 +67,7 @@ const localBusinessSchema = {
   "telephone": "+91-8856949454",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Prime Tech Hub, Undri",
+    "streetAddress": "Undri",
     "addressLocality": "Pune",
     "postalCode": "411060",
     "addressCountry": "IN"
@@ -98,7 +98,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} font-sans antialiased min-h-screen flex flex-col`}>
-        <Preloader />
+        
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

@@ -29,7 +29,7 @@ export const LeadGen = () => {
 
                         <FadeIn delay={0.2} className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
                             <Button size="lg" asChild className="rounded-full shadow-lg h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base w-full sm:w-auto">
-                                <Link href="/contact">
+                                <Link href="/hire-software-developers-pune">
                                     Schedule Consultation <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
                                 </Link>
                             </Button>

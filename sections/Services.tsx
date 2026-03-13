@@ -11,42 +11,42 @@ const services = [
         title: "Custom Web & Mobile App",
         description: "High-performance native and cross-platform mobile apps alongside responsive web applications built for scale.",
         icon: <Laptop className="w-6 h-6" />,
-        href: "/services#web-mobile",
+        href: "/software-development-services-pune#web-mobile",
         color: "bg-primary/10 text-primary border-primary/20",
     },
     {
         title: "MERN & MEAN Stack",
         description: "Full-stack enterprise applications utilizing MongoDB, Express, React/Angular, and Node.js.",
         icon: <Code2 className="w-6 h-6" />,
-        href: "/services#mern",
+        href: "/software-development-services-pune#mern",
         color: "bg-primary-accent/10 text-primary-accent border-primary-accent/20",
     },
     {
         title: "E-commerce Solutions",
         description: "Scalable online stores with seamless payment integrations, inventory management, and fast checkouts.",
         icon: <ShoppingCart className="w-6 h-6" />,
-        href: "/services#ecommerce",
+        href: "/software-development-services-pune#ecommerce",
         color: "bg-primary/10 text-primary border-primary/20",
     },
     {
         title: "SEO & Digital Marketing",
         description: "Data-driven marketing strategies, advanced AI SEO, and campaign management to generate high-quality leads.",
         icon: <TrendingUp className="w-6 h-6" />,
-        href: "/services#marketing",
+        href: "/software-development-services-pune#marketing",
         color: "bg-primary-accent/10 text-primary-accent border-primary-accent/20",
     },
     {
         title: "WordPress Headless CMS",
         description: "Lightning-fast content delivery using modern JavaScript frameworks combined with WordPress backend.",
         icon: <Layers className="w-6 h-6" />,
-        href: "/services#cms",
+        href: "/software-development-services-pune#cms",
         color: "bg-primary/10 text-primary border-primary/20",
     },
     {
         title: "UI/UX Design",
         description: "User-centric SaaS interfaces and engaging experiences designed in Figma for maximum conversion.",
         icon: <PenTool className="w-6 h-6" />,
-        href: "/services#design",
+        href: "/software-development-services-pune#design",
         color: "bg-primary-accent/10 text-primary-accent border-primary-accent/20",
     },
 ];
@@ -144,7 +144,7 @@ export const ServicesOverview = () => {
                 </div>
                 <FadeIn delay={0.2} direction="left">
                     <Link
-                        href="/services"
+                        href="/software-development-services-pune"
                         className="text-primary font-medium hover:underline underline-offset-4 inline-flex items-center"
                     >
                         Explore all services &rarr;

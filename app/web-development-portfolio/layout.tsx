@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Portfolio | Maxima Business Solutions",
     description: "See how we've helped businesses grow with innovative web and mobile solutions.",
-    url: "https://maximabusiness.com/portfolio",
+    url: "https://maximabusiness.com/web-development-portfolio",
   }
 };
 

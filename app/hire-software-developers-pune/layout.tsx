@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact Maxima Business Solutions | Hire Experts in Pune",
     description: "Start your digital transformation journey today. Let's discuss your next project with Pune's top IT team.",
-    url: "https://maximabusiness.com/contact",
+    url: "https://maximabusiness.com/hire-software-developers-pune",
   }
 };
 

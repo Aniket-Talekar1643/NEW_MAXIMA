@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Industries We Serve | Maxima Business",
     description: "Tailored IT & digital transformation services for diverse industries.",
-    url: "https://maximabusiness.com/industries",
+    url: "https://maximabusiness.com/it-solutions-industries",
   }
 };
 

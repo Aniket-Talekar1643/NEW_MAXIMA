@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Trusted IT Outsourcing Agency & Digital Transformation Partner",
     description: "Driving innovation & growth as a leading IT outsourcing agency in Pune.",
-    url: "https://maximabusiness.com/about",
+    url: "https://maximabusiness.com/it-outsourcing-agency-pune",
   }
 };
 

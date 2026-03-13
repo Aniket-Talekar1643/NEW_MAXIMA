@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Web & Mobile App Development Services | Maxima Business Solutions",
     description: "Expert software services in Pune including web, mobile, and digital marketing.",
-    url: "https://maximabusiness.com/services",
+    url: "https://maximabusiness.com/software-development-services-pune",
   }
 };
 

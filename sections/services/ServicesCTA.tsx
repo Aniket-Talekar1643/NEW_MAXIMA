@@ -19,7 +19,7 @@ export const ServicesCTA = () => {
                         <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
                             Let's build something extraordinary together. Our team of experts is ready to bring your vision to life.
                         </p>
-                        <Link href="/contact">
+                        <Link href="/hire-software-developers-pune">
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}

@@ -48,7 +48,7 @@ export default function BlogsPage() {
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {blogs.map((blog, index) => (
                             <Link
-                                href={`/blogs/${blog.slug}`}
+                                href={`/software-industry-blog/${blog.slug}`}
                                 key={blog.title}
                             >
                                 <motion.article

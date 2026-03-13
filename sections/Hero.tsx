@@ -191,7 +191,7 @@ export const Hero = () => {
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <MagneticButton>
-                                <Link href="/contact">
+                                <Link href="/hire-software-developers-pune">
                                     <motion.button
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
@@ -205,7 +205,7 @@ export const Hero = () => {
                                 </Link>
                             </MagneticButton>
                             <MagneticButton strength={20}>
-                                <Link href="/services">
+                                <Link href="/software-development-services-pune">
                                     <motion.button
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}

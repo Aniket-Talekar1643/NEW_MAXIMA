@@ -22,7 +22,7 @@ export default function BlogDetailPage() {
                 <div className="text-center space-y-6">
                     <h1 className="text-4xl font-bold">Blog not found</h1>
                     <button
-                        onClick={() => router.push('/blogs')}
+                        onClick={() => router.push('/software-industry-blog')}
                         className="bg-primary px-8 py-3 rounded-full text-white font-semibold hover:bg-primary/90 transition-colors"
                     >
                         Back to Blogs
@@ -57,7 +57,7 @@ export default function BlogDetailPage() {
                     >
                         {/* Back link */}
                         <Link
-                            href="/blogs"
+                            href="/software-industry-blog"
                             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mb-10 group"
                         >
                             <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
@@ -211,7 +211,7 @@ export default function BlogDetailPage() {
                             </div>
 
                             <Link
-                                href="/blogs"
+                                href="/software-industry-blog"
                                 className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline underline-offset-4 transition-all group"
                             >
                                 <ArrowLeft size={15} className="group-hover:-translate-x-1 transition-transform" />
@@ -227,7 +227,7 @@ export default function BlogDetailPage() {
                 <div className="container mx-auto px-6 md:px-12 lg:px-16">
                     <div className="flex items-center justify-between mb-10">
                         <h2 className="text-2xl md:text-3xl font-bold">More <span className="text-primary">Insights</span></h2>
-                        <Link href="/blogs" className="text-sm font-semibold text-primary hover:underline underline-offset-4 flex items-center gap-1 group">
+                        <Link href="/software-industry-blog" className="text-sm font-semibold text-primary hover:underline underline-offset-4 flex items-center gap-1 group">
                             View all <ChevronRight size={15} className="group-hover:translate-x-1 transition-transform" />
                         </Link>
                     </div>
@@ -241,7 +241,7 @@ export default function BlogDetailPage() {
                                 viewport={{ once: true }}
                                 transition={{ delay: i * 0.1 }}
                             >
-                                <Link href={`/blogs/${post.slug}`} className="block group">
+                                <Link href={`/software-industry-blog/${post.slug}`} className="block group">
                                     <article className="flex flex-col h-full bg-card border border-border rounded-2xl overflow-hidden hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
                                         <div className="aspect-[16/9] relative overflow-hidden">
                                             <Image

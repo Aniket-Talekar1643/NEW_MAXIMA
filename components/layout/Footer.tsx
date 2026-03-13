@@ -43,12 +43,12 @@ export const Footer = () => {
                         <h3 className="text-foreground font-semibold mb-4 sm:mb-6 text-sm">Company</h3>
                         <ul className="flex flex-col gap-2.5 text-xs sm:text-sm">
                             {[
-                                { href: "/about", label: "About Us" },
-                                { href: "/services", label: "Services" },
-                                { href: "/technologies", label: "Technologies" },
-                                { href: "/process", label: "Our Process" },
-                                { href: "/case-studies", label: "Case Studies" },
-                                { href: "/careers", label: "Careers" },
+                                { href: "/it-outsourcing-agency-pune", label: "About Us" },
+                                { href: "/software-development-services-pune", label: "Services" },
+                                { href: "/mern-stack-development-company", label: "Technologies" },
+                                { href: "/agile-software-development-process", label: "Our Process" },
+                                { href: "/web-development-case-studies", label: "Case Studies" },
+                                { href: "/it-jobs-pune", label: "Careers" },
                             ].map(({ href, label }) => (
                                 <li key={label}>
                                     <Link href={href} className="hover:text-primary transition-colors">{label}</Link>
@@ -62,12 +62,12 @@ export const Footer = () => {
                         <h3 className="text-foreground font-semibold mb-4 sm:mb-6 text-sm">Services</h3>
                         <ul className="flex flex-col gap-2.5 text-xs sm:text-sm">
                             {[
-                                { href: "/services#web-dev", label: "Web & Mobile App Dev" },
-                                { href: "/services#mern", label: "MERN Stack Dev" },
-                                { href: "/services#ecommerce", label: "E-commerce Solutions" },
-                                { href: "/services#marketing", label: "Digital Marketing" },
-                                { href: "/services#cms", label: "WordPress Headless CMS" },
-                                { href: "/services#design", label: "UI/UX Design" },
+                                { href: "/software-development-services-pune#web-dev", label: "Web & Mobile App Dev" },
+                                { href: "/software-development-services-pune#mern", label: "MERN Stack Dev" },
+                                { href: "/software-development-services-pune#ecommerce", label: "E-commerce Solutions" },
+                                { href: "/software-development-services-pune#marketing", label: "Digital Marketing" },
+                                { href: "/software-development-services-pune#cms", label: "WordPress Headless CMS" },
+                                { href: "/software-development-services-pune#design", label: "UI/UX Design" },
                             ].map(({ href, label }) => (
                                 <li key={label}>
                                     <Link href={href} className="hover:text-primary transition-colors">{label}</Link>
@@ -85,7 +85,7 @@ export const Footer = () => {
                                     <MapPin size={18} />
                                 </div>
                                 <span className="text-muted-foreground leading-relaxed text-sm">
-                                    Prime Tech Hub, Undri,<br />
+                                    Undri,<br />
                                     Pune, Maharashtra 411057
                                 </span>
                             </li>

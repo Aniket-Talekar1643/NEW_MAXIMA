@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Careers at Maxima Business Solutions",
     description: "Build your future with Pune's fastest-growing digital agency.",
-    url: "https://maximabusiness.com/careers",
+    url: "https://maximabusiness.com/it-jobs-pune",
   }
 };
 

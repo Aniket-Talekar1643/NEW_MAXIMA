@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 
 const services = [
-    { icon: Code2, title: "Software Development", desc: "Tailor-made unique business level software solutions built to match your processes precisely." },
+    { icon: Code2, title: "Custom Software Solutions", desc: "Tailor-made unique business software solutions built by our expert development company in Pune to match your processes." },
     { icon: Layout, title: "Web Applications", desc: "Modern scalable web applications designed to enhance user experience and performance." },
     { icon: Smartphone, title: "Mobile Apps", desc: "Flexible mobile development for Android and iOS platforms." },
     { icon: Palette, title: "UI/UX Design", desc: "User-first interfaces and experiences designed to improve engagement." },

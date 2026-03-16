@@ -52,7 +52,7 @@ export const AboutWhoWeAre = () => {
                             We also create custom branding strategies for powerful audience impact.
                         </p>
 
-                        <Link href="/hire-software-developers-pune" className="inline-block relative group">
+                        <Link href="/contact" className="inline-block relative group">
                             <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full group-hover:bg-primary/30 transition-colors" />
                             <motion.button
                                 whileHover={{ scale: 1.05 }}

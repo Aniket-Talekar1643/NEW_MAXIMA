@@ -20,17 +20,23 @@ export const Footer = () => {
                                 className="h-10 md:h-12 w-auto object-contain dark:brightness-[0.9] dark:contrast-125 brightness-100 contrast-100 transition-transform group-hover:scale-105"
                             />
                         </Link>
-                        <p className="text-sm leading-relaxed">
-                            Cutting-edge digital IT solutions company in Pune providing MERN stack development, digital marketing, cloud services, and more.
-                        </p>
+                        <h1 className="text-sm leading-relaxed">
+                            A leading software development company in Pune providing custom software solutions, MERN stack development, digital marketing, and IT outsourcing services.
+                        </h1>
                         <div className="flex gap-3 mt-1">
                             {[
-                                { Icon: Facebook, label: "Facebook" },
-                                { Icon: Twitter, label: "Twitter" },
-                                { Icon: Instagram, label: "Instagram" },
-                                { Icon: Linkedin, label: "LinkedIn" },
-                            ].map(({ Icon, label }) => (
-                                <Link key={label} href="#" className="hover:text-primary transition-colors">
+                                { Icon: Facebook, label: "Facebook", href: "https://www.facebook.com/maximabusinesssolutions/" },
+                                { Icon: Twitter, label: "Twitter", href: "https://x.com/maximabusiness" },
+                                { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/maximabusinesssolutions?igsh=MTYyc3BqYjVibXJ5Yg==" },
+                                { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/maxima-business-solutions" },
+                            ].map(({ Icon, label, href }) => (
+                                <Link 
+                                    key={label} 
+                                    href={href} 
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="hover:text-primary transition-colors"
+                                >
                                     <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                                     <span className="sr-only">{label}</span>
                                 </Link>
@@ -43,12 +49,12 @@ export const Footer = () => {
                         <h3 className="text-foreground font-semibold mb-4 sm:mb-6 text-sm">Company</h3>
                         <ul className="flex flex-col gap-2.5 text-xs sm:text-sm">
                             {[
+                                { href: "/", label: "Home" },
                                 { href: "/it-outsourcing-agency-pune", label: "About Us" },
                                 { href: "/software-development-services-pune", label: "Services" },
-                                { href: "/mern-stack-development-company", label: "Technologies" },
-                                { href: "/agile-software-development-process", label: "Our Process" },
-                                { href: "/web-development-case-studies", label: "Case Studies" },
-                                { href: "/it-jobs-pune", label: "Careers" },
+                                { href: "/web-development-portfolio", label: "Portfolio" },
+                                { href: "/software-industry-blog", label: "Blogs" },
+                                { href: "/contact", label: "Contact Us" },
                             ].map(({ href, label }) => (
                                 <li key={label}>
                                     <Link href={href} className="hover:text-primary transition-colors">{label}</Link>
@@ -86,20 +92,20 @@ export const Footer = () => {
                                 </div>
                                 <span className="text-muted-foreground leading-relaxed text-sm">
                                     Undri,<br />
-                                    Pune, Maharashtra 411057
+                                    Vignharta Apartment, Pune 411060
                                 </span>
                             </li>
                             <li className="flex items-center gap-4 group">
                                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
                                     <Phone size={18} />
                                 </div>
-                                <span className="text-muted-foreground text-sm">+91 88569 49454</span>
+                                <span className="text-muted-foreground text-sm">+91 9657480645</span>
                             </li>
                             <li className="flex items-center gap-4 group">
                                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
                                     <Mail size={18} />
                                 </div>
-                                <span className="text-muted-foreground text-sm">info@maximabs.com</span>
+                                <span className="text-muted-foreground text-sm">info@maximabusinesssolutions.com</span>
                             </li>
                         </ul>
 

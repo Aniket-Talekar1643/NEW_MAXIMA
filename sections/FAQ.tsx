@@ -7,7 +7,7 @@ import { FadeIn, SectionWrapper } from "@/components/layout/SectionWrapper";
 
 const faqs = [
     {
-        question: "Why chose Maxima as your software development company in Pune?",
+        question: "Why choose Maxima as your software development company in Pune?",
         answer: "As a leading software development company in Pune, Maxima Business Solutions offers a unique blend of global expertise and local market understanding. We specialize in MERN stack, mobile apps, and digital transformation, providing tailored solutions from our Prime Tech Hub HQ in Undri."
     },
     {

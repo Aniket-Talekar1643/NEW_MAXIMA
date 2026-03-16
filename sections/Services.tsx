@@ -112,7 +112,7 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
                 <p className="text-muted-foreground flex-1 mb-6 text-sm leading-relaxed">
                     {service.description}
                 </p>
-                <Link
+                {/* <Link
                     href={service.href}
                     className="text-sm font-semibold text-foreground flex items-center gap-2 group-hover:text-primary transition-colors mt-auto w-fit"
                 >
@@ -120,7 +120,7 @@ const ServiceCard = ({ service, index }: { service: any; index: number }) => {
                     <motion.span
                         className="group-hover:translate-x-1 transition-transform"
                     >&rarr;</motion.span>
-                </Link>
+                </Link> */}
             </motion.div>
         </FadeIn>
     );

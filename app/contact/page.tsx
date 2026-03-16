@@ -17,6 +17,8 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
+import { submitEnquiry } from "@/lib/api";
+
 export default function ContactPage() {
     const [submitError, setSubmitError] = useState<string | null>(null);
     const {
@@ -31,20 +33,30 @@ export default function ContactPage() {
     const onSubmit = async (data: FormValues) => {
         setSubmitError(null);
         try {
-            const response = await fetch("/api/contact", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data),
+            // Get reCAPTCHA token
+            if (!window.grecaptcha) {
+                throw new Error("reCAPTCHA not loaded");
+            }
+
+            const token = await new Promise<string>((resolve, reject) => {
+                window.grecaptcha.ready(() => {
+                    window.grecaptcha
+                        .execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!, { action: "contact" })
+                        .then(resolve)
+                        .catch(reject);
+                });
             });
 
-            if (!response.ok) {
-                throw new Error("Failed to send message");
+            const result = await submitEnquiry({ ...data, token });
+
+            if (!result.success) {
+                throw new Error(result.message || "Failed to send message");
             }
 
             reset();
-        } catch (err) {
+        } catch (err: any) {
             console.error(err);
-            setSubmitError("Failed to send message. Please try again later.");
+            setSubmitError(err.message || "Failed to send message. Please try again later.");
         }
     };
 
@@ -55,10 +67,10 @@ export default function ContactPage() {
                 <FadeIn>
                     <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Get In Touch</span>
                     <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
-                        Hire Dedicated <span className="text-primary">Software Developers in Pune</span>
+                        Contact <span className="text-primary">Us</span>
                     </h1>
                     <p className="text-lg text-muted-foreground max-w-2xl">
-                        Looking to hire dedicated software developers in Pune? We&apos;d love to hear from you. 
+                        Have a project in mind? We&apos;d love to hear from you. 
                         Our team of experts is ready to help you navigate your digital transformation journey.
                     </p>
                 </FadeIn>

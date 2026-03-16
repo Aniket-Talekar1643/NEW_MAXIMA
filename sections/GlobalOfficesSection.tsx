@@ -6,8 +6,8 @@ import WorldMap from './WorldMap';
 
 const stats = [
     { value: '1', label: 'Core Office' },
-    { value: '40+', label: 'Countries Reached' },
-    { value: '200+', label: 'Team Members' },
+    { value: '10+', label: 'Countries Reached' },
+    { value: '50+', label: 'Team Members' },
 ];
 
 const GlobalOfficesSection: React.FC = () => {

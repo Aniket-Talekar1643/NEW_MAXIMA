@@ -7,12 +7,12 @@ export const ServicesProcess = () => {
                 <div className="text-center">
                     <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block">OUR PROCESS</span>
                     <h2 className="text-3xl md:text-5xl font-bold mb-8 max-w-5xl mx-auto !leading-tight">
-                        Grow Globally With MERN Stack
+                        Grow Globally With MERN Stack Development
                     </h2>
                     <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-                        As a leading global software development company based in Pune, offering web development, MERN Stack
-                        and digital marketing services that help startups, businesses, and organizations achieve lasting success.
-                        With our expertise in SEO, apps, web apps, branding, and digital marketing solutions, we deliver results that matter.
+                        As a leading web and mobile app development company based in Pune, we deliver end-to-end MERN Stack solutions
+                        that help startups, and enterprises achieve lasting success.
+                        With our expertise in custom software, e-commerce, branding, and digital marketing, we deliver robust solutions that matter.
                     </p>
                 </div>
             </div>

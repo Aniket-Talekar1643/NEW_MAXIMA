@@ -1,9 +1,10 @@
 "use client";
 
 import { FadeIn, SectionWrapper } from "@/components/layout/SectionWrapper";
-import { Button } from "@/components/ui/button";
 import { ArrowRight, PhoneCall, Mail } from "lucide-react";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { Button, buttonVariants } from "@/components/ui/button";
 
 export const LeadGen = () => {
     return (
@@ -17,22 +18,23 @@ export const LeadGen = () => {
                     <div>
                         <FadeIn>
                             <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight mb-4 sm:mb-6">
-                                Ready to scale with Pune&apos;s Best <span className="text-primary">Software Team?</span>
+                                Ready to scale with Pune&apos;s Best <span className="text-primary">Software Developers?</span>
                             </h2>
                         </FadeIn>
                         <FadeIn delay={0.1}>
                             <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 text-balance">
-                                Book a free 30-minute consultation with our software development experts in Pune. 
+                                Book a free 30-minute consultation with our expert software development team in Pune. 
                                 We&apos;ll help you architect a roadmap for your next digital breakthrough.
                             </p>
                         </FadeIn>
 
                         <FadeIn delay={0.2} className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
-                            <Button size="lg" asChild className="rounded-full shadow-lg h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base w-full sm:w-auto">
-                                <Link href="/hire-software-developers-pune">
-                                    Schedule Consultation <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
-                                </Link>
-                            </Button>
+                            <Link 
+                                href="/contact"
+                                className={cn(buttonVariants({ variant: "default", size: "lg" }), "rounded-full shadow-lg h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base w-full sm:w-auto")}
+                            >
+                                Schedule Consultation <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
+                            </Link>
                         </FadeIn>
 
                         <FadeIn delay={0.3} className="flex flex-col sm:flex-row gap-4 sm:gap-6 text-sm font-medium">
@@ -42,7 +44,7 @@ export const LeadGen = () => {
                                 </div>
                                 <div>
                                     <p className="text-muted-foreground text-xs sm:text-sm">Call Us Directly</p>
-                                    <p className="text-foreground text-sm sm:text-base font-semibold">+91 98765 43210</p>
+                                    <p className="text-foreground text-sm sm:text-base font-semibold">+91 9657480645</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-2 sm:gap-3">
@@ -51,7 +53,7 @@ export const LeadGen = () => {
                                 </div>
                                 <div>
                                     <p className="text-muted-foreground text-xs sm:text-sm">Email Us</p>
-                                    <p className="text-foreground text-sm sm:text-base font-semibold">hello@maximabusiness.com</p>
+                                    <p className="text-foreground text-sm sm:text-base font-semibold">info@maximabusinesssolutions.com</p>
                                 </div>
                             </div>
                         </FadeIn>

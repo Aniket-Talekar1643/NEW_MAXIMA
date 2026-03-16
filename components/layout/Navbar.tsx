@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion";
 import { MagneticButton } from "@/components/ui/MagneticButton";
@@ -28,7 +28,7 @@ export const Navbar = () => {
     const navY = useTransform(scrollY, [0, 100], [20, 10]);
     const navPadding = useTransform(scrollY, [0, 100], ["12px", "8px"]);
     const navScale = useTransform(scrollY, [0, 100], [1, 0.98]);
-    const navWidth = useTransform(scrollY, [0, 100], ["95%", "90%"]);
+    const navWidth = useTransform(scrollY, [0, 100], ["96%", "92%"]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -117,13 +117,11 @@ export const Navbar = () => {
                 <div className="hidden md:flex items-center gap-2 lg:gap-4 relative z-10">
                     <ThemeSwitcher />
                     <MagneticButton strength={12}>
-                        <Button asChild className="rounded-3xl px-8 h-10 bg-primary-gradient text-white border border-white/10 shadow-xl shadow-primary/20 hover:shadow-primary/40 group overflow-hidden transition-all hover:scale-105 active:scale-95">
-                            <Link href="/hire-software-developers-pune">
-                                <span className="relative z-10 flex items-center font-bold text-sm tracking-wide">
-                                    Let's Connect <ChevronRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                                </span>
-                            </Link>
-                        </Button>
+                        <Link href="/contact" className={cn(buttonVariants({ variant: "default" }), "rounded-3xl px-4 lg:px-8 h-9 lg:h-10 bg-primary-gradient text-white border border-white/10 shadow-xl shadow-primary/20 hover:shadow-primary/40 group overflow-hidden transition-all hover:scale-105 active:scale-95")}>
+                            <span className="relative z-10 flex items-center font-bold text-[10px] lg:text-sm tracking-wide whitespace-nowrap">
+                                Let's Connect <ChevronRight className="w-3 h-3 lg:w-4 lg:h-4 ml-1 lg:ml-2 group-hover:translate-x-1 transition-transform" />
+                            </span>
+                        </Link>
                     </MagneticButton>
                 </div>
 
@@ -175,10 +173,12 @@ export const Navbar = () => {
                                 transition={{ delay: 0.3 }}
                                 className="pt-6 border-t border-border"
                             >
-                                <Link href="/hire-software-developers-pune" onClick={() => setIsMobileMenuOpen(false)}>
-                                    <Button className="w-full h-14 rounded-2xl bg-primary-gradient text-lg font-bold text-white">
-                                        Let's Talk
-                                    </Button>
+                                <Link 
+                                    href="/contact" 
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className={cn(buttonVariants({ variant: "default" }), "w-full h-14 rounded-2xl bg-primary-gradient text-lg font-bold text-white flex items-center justify-center")}
+                                >
+                                    Let's Talk
                                 </Link>
                             </motion.div>
                         </nav>

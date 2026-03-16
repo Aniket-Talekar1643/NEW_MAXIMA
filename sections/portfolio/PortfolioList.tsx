@@ -25,6 +25,21 @@ const LaptopMockup = ({ image }: { image: string }) => (
 export const PortfolioList = () => {
     return (
         <section className="py-24 relative overflow-hidden">
+            <div className="container mx-auto px-6 md:px-12 lg:px-16 text-center mb-32">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8 }}
+                    className="max-w-xl mx-auto"
+                >
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4 !leading-tight">Software Tech Success Stories</h2>
+                    <p className="text-lg text-muted-foreground mb-8">
+                        Explore our software tech success stories and successful <br className="hidden md:block" /> client collaborations that drive digital growth.
+                    </p>
+                    <div className="w-24 h-1 bg-primary text-transparent mx-auto rounded-full bg-gradient-to-r from-primary to-primary/20" />
+                </motion.div>
+            </div>
             <SectionHeader 
                 title={<>Our <span className="text-primary italic">Portfolio</span></>}
                 subtitle="Explore our recent projects and successful client collaborations. We blend technology and talent to empower global organizations."

@@ -47,8 +47,8 @@ export const LeadGen = () => {
                 <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
                     <div>
                         <FadeIn>
-                            <h2 className="mb-4 sm:mb-6">
-                                Ready to transform your <span className="text-primary">Digital Presence?</span>
+                            <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight mb-4 sm:mb-6">
+                                Ready to scale with Pune&apos;s Best <span className="text-primary">Software Team?</span>
                             </h2>
                         </FadeIn>
                         <FadeIn delay={0.1}>

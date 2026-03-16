@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { organizationSchema, localBusinessSchema } from "@/lib/schema";
 import { Toaster } from "sonner";
 import { Preloader } from "@/components/Preloader";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
@@ -57,6 +58,7 @@ export default function RootLayout({
           </main>
           <Footer />
           <Toaster position="top-right" richColors />
+          <WhatsAppButton />
         </ThemeProvider>
       </body>
     </html>

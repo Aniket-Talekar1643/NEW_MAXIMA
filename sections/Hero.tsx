@@ -152,14 +152,14 @@ export const Hero = () => {
                             <span className="text-xs font-bold text-primary tracking-widest uppercase">PUNE'S TOP IT AGENCY</span>
                         </div>
 
-                        <h1 className="mb-6 flex flex-col">
-                            <TextReveal text="Cutting-Edge" />
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold !leading-[1.1] tracking-tight mb-6 flex flex-col">
+                            <TextReveal text="Leading Software" />
                             <span className="text-primary truncate h-[1.2em]">
                                 <TextReveal text="Development Company" />
                             </span>
-                            <span className="flex flex-wrap items-center">
-                                <TextReveal text="in " />
-                                <span className="text-gradient ml-2">
+                            <span className="text-lg md:text-xl lg:text-2xl text-text-secondary">
+                                Based in
+                                <span className="text-primary truncate h-[1.2em]">
                                     <TextReveal text="Pune" />
                                 </span>
                             </span>

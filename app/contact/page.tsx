@@ -72,8 +72,8 @@ export default function ContactPage() {
             <SectionWrapper className="pb-12">
                 <FadeIn>
                     <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Get In Touch</span>
-                    <h1>
-                        Let&apos;s Build Something <span className="text-primary">Exceptional</span> Together
+                    <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
+                        Hire Dedicated <span className="text-primary">Software Developers in Pune</span>
                     </h1>
                     <p className="max-w-2xl">
                         Have a project in mind? We&apos;d love to hear from you. Our team of experts is ready to help you navigate your digital transformation journey.
@@ -95,7 +95,7 @@ export default function ContactPage() {
                                         <h3 className="mb-2">Our Headquarters</h3>
                                         <p className="text-sm">
                                             Pune, Maharashtra, India<br />
-                                            Prime Tech Hub, Hinjewadi
+                                            Prime Tech Hub, Undri
                                         </p>
                                     </div>
                                 </div>
@@ -205,14 +205,16 @@ export default function ContactPage() {
                                     {errors.message && <p className="text-xs text-destructive">{errors.message.message}</p>}
                                 </div>
 
-                                <Button 
-                                    type="submit" 
-                                    disabled={isSubmitting || !recaptchaLoaded} 
-                                    className="w-full py-6 rounded-xl font-bold group"
-                                >
-                                    {isSubmitting ? "Sending..." : "Send Message"}
-                                    {!isSubmitting && <span className="ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span>}
-                                </Button>
+                                <div className="flex flex-col gap-3">
+                                    <Button 
+                                        type="submit" 
+                                        disabled={isSubmitting || !recaptchaLoaded} 
+                                        className="w-full py-6 rounded-xl font-bold group"
+                                    >
+                                        {isSubmitting ? "Sending..." : "Send Message"}
+                                        {!isSubmitting && <span className="ml-2 group-hover:translate-x-1 transition-transform">&rarr;</span>}
+                                    </Button>
+                                </div>
                             </form>
                         </div>
                     </FadeIn>

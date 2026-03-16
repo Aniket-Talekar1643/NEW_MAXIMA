@@ -20,8 +20,8 @@ export const BlogsPreview = () => {
                     <div className="max-w-2xl">
                         <FadeIn>
                             <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Our Insights</span>
-                            <h2>
-                                Latest from the <span className="text-gradient">Blog</span>
+                            <h2 className=" text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight mb-4">
+                                Latest from our <span className="text-gradient">Tech Insights & Software Industry Blog</span>
                             </h2>
                         </FadeIn>
                         <FadeIn delay={0.1}>

@@ -27,7 +27,10 @@ export async function POST(req: NextRequest) {
     const recaptchaJson = await recaptchaRes.json();
     console.log("reCAPTCHA response:", recaptchaJson);
 
-    if (!recaptchaJson.success || (recaptchaJson.score !== undefined && recaptchaJson.score < 0.5)) {
+    if (
+      !recaptchaJson.success ||
+      (recaptchaJson.score !== undefined && recaptchaJson.score < 0.5)
+    ) {
       console.error("reCAPTCHA failed details:", recaptchaJson);
       return NextResponse.json(
         { message: "reCAPTCHA verification failed", details: recaptchaJson },

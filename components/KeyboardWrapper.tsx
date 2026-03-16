@@ -64,7 +64,7 @@ export const KeyboardWrapper = () => {
                         animate={{ y: 0, opacity: 1 }}
                         exit={{ y: "100%", opacity: 0 }}
                         transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                        className="fixed bottom-0 left-0 right-0 z-[100] bg-background/80 backdrop-blur-xl border-t border-border p-4 pb-8 flex justify-center items-center virtual-keyboard-container"
+                        className="fixed bottom-0 left-0 right-0 z-[100] backdrop-blur-xl border-t border-r border-border p-4 pb-8 justify-center items-start virtual-keyboard-container"
                     >
                         <button 
                             onClick={() => setIsVisible(false)}
@@ -74,7 +74,7 @@ export const KeyboardWrapper = () => {
                             <X className="w-5 h-5" />
                         </button>
                         
-                        <div className="w-full max-w-5xl overflow-hidden py-4">
+                        <div className="w-3/5 max-w-3xl overflow-hidden py-4">
                             <Keyboard enableSound={true} showPreview={true} />
                         </div>
                     </motion.div>

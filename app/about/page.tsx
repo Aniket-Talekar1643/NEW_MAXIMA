@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Trusted IT Outsourcing Agency & Digital Transformation Partner",
     description: "Driving innovation & growth as a leading IT outsourcing agency in Pune.",
     url: "https://maximabusiness.com/about",
-  }
+  },
 };
 
 export default function AboutPage() {

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     title: "Web & Mobile App Development Services | Maxima Business Solutions",
     description: "Expert software services in Pune including web, mobile, and digital marketing.",
     url: "https://maximabusiness.com/services",
-  }
+  },
 };
 
 export default function ServicesPage() {

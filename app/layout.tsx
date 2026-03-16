@@ -5,8 +5,8 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
 import { organizationSchema, localBusinessSchema } from "@/lib/schema";
-import { KeyboardWrapper } from "@/components/KeyboardWrapper";
 import { Toaster } from "sonner";
+import { Preloader } from "@/components/Preloader";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
@@ -18,23 +18,6 @@ export const metadata: Metadata = {
     title: "Maxima Business Solutions | IT Services in Pune",
     description: "Scalable, innovative digital solutions helping modern businesses grow and succeed.",
     url: "https://maximabusiness.com",
-    siteName: "Maxima Business",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Maxima Business Solutions",
-      },
-    ],
-    locale: "en_IN",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Maxima Business Solutions | IT Services",
-    description: "Cutting-edge digital IT solutions company in Pune providing modern web dev and digital marketing.",
-    images: ["/og-image.jpg"],
   },
 };
 
@@ -73,7 +56,6 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-          <KeyboardWrapper />
           <Toaster position="top-right" richColors />
         </ThemeProvider>
       </body>

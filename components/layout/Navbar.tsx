@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronRight } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence, useScroll, useTransform, useSpring } from "framer-motion";
@@ -23,6 +24,7 @@ export const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const { scrollY } = useScroll();
+    const pathname = usePathname();
 
     // Smooth values for navbar animations
     const navY = useTransform(scrollY, [0, 100], [20, 10]);
@@ -95,7 +97,9 @@ export const Navbar = () => {
                         )}
                     </AnimatePresence>
 
-                    {navLinks.map((link, index) => (
+                    {navLinks.map((link, index) => {
+                        const isActive = pathname === link.href || (link.href !== '/' && pathname?.startsWith(link.href));
+                        return (
                         <div
                             key={link.name}
                             onMouseEnter={() => setHoveredIndex(index)}
@@ -105,13 +109,23 @@ export const Navbar = () => {
                             <MagneticButton strength={8}>
                                 <Link
                                     href={link.href}
-                                    className="px-3 md:px-4 lg:px-6 py-1.5 text-[10px] md:text-[11px] lg:text-[13px] font-black text-slate-600 hover:text-slate-900 transition-all tracking-[0.1em] md:tracking-[0.15em] lg:tracking-[0.2em] uppercase block"
+                                    className={cn(
+                                        "px-3 md:px-4 lg:px-6 py-1.5 text-[10px] md:text-[11px] lg:text-[13px] font-black transition-all tracking-[0.1em] md:tracking-[0.15em] lg:tracking-[0.2em] uppercase block relative",
+                                        isActive ? "text-primary" : "text-slate-600 hover:text-slate-900"
+                                    )}
                                 >
                                     {link.name}
+                                    {isActive && (
+                                        <motion.div
+                                            layoutId="active-nav-indicator-desktop"
+                                            className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/3 h-0.5 bg-primary rounded-full"
+                                            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                                        />
+                                    )}
                                 </Link>
                             </MagneticButton>
                         </div>
-                    ))}
+                    )})}
                 </nav>
 
                 <div className="hidden md:flex items-center gap-2 lg:gap-4 relative z-10">
@@ -150,7 +164,9 @@ export const Navbar = () => {
                         className="absolute top-full left-0 right-0 mt-4 md:hidden bg-white backdrop-blur-2xl border border-slate-200 rounded-3xl overflow-hidden shadow-2xl p-6 mx-4"
                     >
                         <nav className="flex flex-col gap-4">
-                            {navLinks.map((link, index) => (
+                            {navLinks.map((link, index) => {
+                                const isActive = pathname === link.href || (link.href !== '/' && pathname?.startsWith(link.href));
+                                return (
                                 <motion.div
                                     key={link.name}
                                     initial={{ opacity: 0, x: -20 }}
@@ -159,14 +175,20 @@ export const Navbar = () => {
                                 >
                                     <Link
                                         href={link.href}
-                                        className="text-2xl font-bold py-2 flex items-center justify-between group text-slate-900"
+                                        className={cn(
+                                            "text-2xl font-bold py-2 flex items-center justify-between group",
+                                            isActive ? "text-primary" : "text-slate-900"
+                                        )}
                                         onClick={() => setIsMobileMenuOpen(false)}
                                     >
-                                        <span className="group-hover:text-primary transition-colors">{link.name}</span>
-                                        <ChevronRight className="w-6 h-6 opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0 transition-all text-primary" />
+                                        <span className={cn("transition-colors", !isActive && "group-hover:text-primary")}>{link.name}</span>
+                                        <ChevronRight className={cn(
+                                            "w-6 h-6 transition-all text-primary",
+                                            isActive ? "opacity-100 translate-x-0" : "opacity-0 group-hover:opacity-100 -translate-x-4 group-hover:translate-x-0"
+                                        )} />
                                     </Link>
                                 </motion.div>
-                            ))}
+                            )})}
                             <motion.div
                                 initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}

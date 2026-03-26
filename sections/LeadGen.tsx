@@ -1,12 +1,71 @@
 "use client";
 
+import { useState } from "react";
 import { FadeIn, SectionWrapper } from "@/components/layout/SectionWrapper";
-import { ArrowRight, PhoneCall, Mail } from "lucide-react";
+import { ArrowRight, PhoneCall, Mail, Loader2 } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { Button, buttonVariants } from "@/components/ui/button";
 
 export const LeadGen = () => {
+    const [formData, setFormData] = useState({ name: "", email: "", service: "Web Development" });
+    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+    const [errorMessage, setErrorMessage] = useState("");
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        
+        if (!formData.name || !formData.email) {
+            setErrorMessage("Please fill all required fields.");
+            setStatus("error");
+            return;
+        }
+
+        setStatus("loading");
+        
+        try {
+            if (!window.grecaptcha) {
+                throw new Error("reCAPTCHA not loaded. Please disable adblock or refresh.");
+            }
+            
+            window.grecaptcha.ready(async () => {
+                try {
+                    const token = await window.grecaptcha.execute(
+                        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
+                        { action: "proposal" }
+                    );
+                    
+                    const res = await fetch("/api/contact", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            fullName: formData.name,
+                            email: formData.email,
+                            subject: `Proposal Request: ${formData.service}`,
+                            message: `I am interested in ${formData.service} services. Please send a proposal.`,
+                            token,
+                        }),
+                    });
+
+                    if (res.ok) {
+                        setStatus("success");
+                        setFormData({ name: "", email: "", service: "Web Development" });
+                    } else {
+                        setStatus("error");
+                        setErrorMessage("Request failed. Please try again or email us directly.");
+                    }
+                } catch (err) {
+                    console.error("reCAPTCHA/Fetch Error:", err);
+                    setStatus("error");
+                    setErrorMessage("Verification failed. Please try again.");
+                }
+            });
+        } catch (error: any) {
+            setStatus("error");
+            setErrorMessage(error.message || "An unexpected error occurred.");
+        }
+    };
+
     return (
         <SectionWrapper id="contact-cta" className="bg-muted/20 py-16 sm:py-20 md:py-24">
             <div className="bg-card border border-border rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-16 relative overflow-hidden shadow-sm">
@@ -64,14 +123,18 @@ export const LeadGen = () => {
                             <h3 className="text-xl sm:text-2xl font-bold mb-1 sm:mb-2">Get your Free Proposal</h3>
                             <p className="text-muted-foreground text-xs sm:text-sm mb-4 sm:mb-6">Fill out the form below and we&apos;ll get back to you within 24 hours.</p>
 
-                            <form className="space-y-3 sm:space-y-4" onSubmit={(e) => e.preventDefault()}>
+                            <form className="space-y-3 sm:space-y-4" onSubmit={handleSubmit}>
                                 <div className="space-y-1.5 sm:space-y-2">
                                     <label htmlFor="name" className="text-xs sm:text-sm font-medium text-foreground">Full Name</label>
                                     <input
                                         id="name"
                                         type="text"
                                         placeholder="John Doe"
+                                        value={formData.name}
+                                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                                         className="w-full bg-background border border-input rounded-md px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary shadow-sm"
+                                        required
+                                        disabled={status === "loading" || status === "success"}
                                     />
                                 </div>
                                 <div className="space-y-1.5 sm:space-y-2">
@@ -80,14 +143,21 @@ export const LeadGen = () => {
                                         id="email"
                                         type="email"
                                         placeholder="john@company.com"
+                                        value={formData.email}
+                                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                         className="w-full bg-background border border-input rounded-md px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary shadow-sm"
+                                        required
+                                        disabled={status === "loading" || status === "success"}
                                     />
                                 </div>
                                 <div className="space-y-1.5 sm:space-y-2">
                                     <label htmlFor="service" className="text-xs sm:text-sm font-medium text-foreground">Interested In</label>
                                     <select
                                         id="service"
+                                        value={formData.service}
+                                        onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                                         className="w-full bg-background border border-input rounded-md px-3 sm:px-4 py-2.5 sm:py-3 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-primary shadow-sm appearance-none"
+                                        disabled={status === "loading" || status === "success"}
                                     >
                                         <option>Web Development</option>
                                         <option>Mobile App</option>
@@ -96,8 +166,28 @@ export const LeadGen = () => {
                                         <option>Other</option>
                                     </select>
                                 </div>
-                                <Button type="submit" size="lg" className="w-full mt-2 text-sm sm:text-base">
-                                    Request Proposal
+                                
+                                {status === "error" && (
+                                    <div className="text-sm text-red-500 font-medium">{errorMessage}</div>
+                                )}
+                                
+                                {status === "success" && (
+                                    <div className="text-sm text-green-500 font-medium p-3 bg-green-500/10 rounded-md">
+                                        Thank you! Your request has been sent successfully. We will get back to you shortly.
+                                    </div>
+                                )}
+
+                                <Button type="submit" size="lg" className="w-full mt-2 text-sm sm:text-base relative" disabled={status === "loading" || status === "success"}>
+                                    {status === "loading" ? (
+                                        <>
+                                            <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+                                            Sending...
+                                        </>
+                                    ) : status === "success" ? (
+                                        "Sent Successfully"
+                                    ) : (
+                                        "Request Proposal"
+                                    )}
                                 </Button>
                             </form>
                         </div>

@@ -193,10 +193,10 @@ export const Hero = () => {
                             <MagneticButton>
                                 <Link 
                                     href="/contact"
-                                    className="px-8 py-4 rounded-full bg-primary-gradient text-white font-bold text-lg shadow-xl shadow-primary/20 transition-all hover:shadow-primary/40 flex items-center gap-2 hover:scale-105 active:scale-95"
+                                    className="px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-primary-gradient text-white font-bold text-base sm:text-lg shadow-xl shadow-primary/20 transition-all hover:shadow-primary/40 flex items-center justify-center gap-2 hover:scale-105 active:scale-95 w-full sm:w-auto"
                                 >
                                     <span>Contact Us</span>
-                                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                     </svg>
                                 </Link>
@@ -204,7 +204,7 @@ export const Hero = () => {
                             <MagneticButton strength={20}>
                                 <Link 
                                     href="/software-development-services-pune"
-                                    className="px-8 py-4 rounded-full border border-border text-foreground font-bold text-lg bg-muted/40 backdrop-blur-sm transition-all hover:bg-muted/60 hover:scale-105 active:scale-95 flex items-center justify-center"
+                                    className="px-6 py-3 sm:px-8 sm:py-4 rounded-full border border-border text-foreground font-bold text-base sm:text-lg bg-muted/40 backdrop-blur-sm transition-all hover:bg-muted/60 hover:scale-105 active:scale-95 flex items-center justify-center w-full sm:w-auto"
                                 >
                                     Explore Services
                                 </Link>

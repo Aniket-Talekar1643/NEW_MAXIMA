@@ -52,15 +52,15 @@ export const AboutWhoWeAre = () => {
                             We also create custom branding strategies for powerful audience impact.
                         </p>
 
-                        <Link href="/contact" className="inline-block relative group">
+                        <Link href="/contact" className="block sm:inline-block relative group w-full sm:w-auto">
                             <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full group-hover:bg-primary/30 transition-colors" />
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="relative flex items-center space-x-3 bg-primary text-primary-foreground px-8 py-4 rounded-full font-bold shadow-lg"
+                                className="relative flex items-center justify-center space-x-3 bg-primary text-primary-foreground px-6 py-3 sm:px-8 sm:py-4 rounded-full font-bold text-base sm:text-lg shadow-lg w-full"
                             >
                                 <span>Get in Touch</span>
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                             </motion.button>
                         </Link>
                     </motion.div>

@@ -30,9 +30,9 @@ export const Footer = () => {
                                 { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/maximabusinesssolutions?igsh=MTYyc3BqYjVibXJ5Yg==" },
                                 { Icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/maxima-business-solutions" },
                             ].map(({ Icon, label, href }) => (
-                                <Link 
-                                    key={label} 
-                                    href={href} 
+                                <Link
+                                    key={label}
+                                    href={href}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="hover:text-primary transition-colors"
@@ -96,20 +96,24 @@ export const Footer = () => {
                                 </span>
                             </li>
                             <li className="flex items-center gap-4 group">
-                                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                                    <Phone size={18} />
-                                </div>
-                                <span className="text-muted-foreground text-sm">+91 9657480645</span>
+                                <Link href="tel:+919657480645" className="flex items-center gap-4 w-full">
+                                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                                        <Phone size={18} />
+                                    </div>
+                                    <span className="text-muted-foreground text-sm group-hover:text-primary transition-colors">+91 9657480645</span>
+                                </Link>
                             </li>
                             <li className="flex items-center gap-4 group">
-                                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                                    <Mail size={18} />
-                                </div>
-                                <span className="text-muted-foreground text-sm">info@maximabusinesssolutions.com</span>
+                                <Link href="mailto:info@maximabusinesssolutions.com" className="flex items-center gap-4 w-full">
+                                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all">
+                                        <Mail size={18} />
+                                    </div>
+                                    <span className="text-muted-foreground text-sm group-hover:text-primary transition-colors">info@maximabusinesssolutions.com</span>
+                                </Link>
                             </li>
                         </ul>
 
-                        <div className="space-y-2">
+                        {/* <div className="space-y-2">
                             <p className="text-xs sm:text-sm font-medium text-foreground">Subscribe to our newsletter</p>
                             <form className="flex gap-2">
                                 <input
@@ -121,7 +125,7 @@ export const Footer = () => {
                                 />
                                 <Button type="submit" size="sm" className="shrink-0 text-xs sm:text-sm">Go</Button>
                             </form>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 

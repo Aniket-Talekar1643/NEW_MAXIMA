@@ -86,7 +86,7 @@ export default function BlogsPage() {
                 </div>
             </section>
 
-            <Newsletter />
+            {/* <Newsletter /> */}
         </main>
     );
 }

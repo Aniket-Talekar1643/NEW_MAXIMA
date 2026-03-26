@@ -152,17 +152,8 @@ export const Hero = () => {
                             <span className="text-xs font-bold text-primary tracking-widest uppercase">PUNE'S TOP IT AGENCY</span>
                         </div>
 
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold !leading-[1.1] tracking-tight mb-6 flex flex-col">
-                            <TextReveal text="Leading Software" />
-                            <span className="text-primary truncate h-[1.2em]">
-                                <TextReveal text="Development Company" />
-                            </span>
-                            <span className="flex flex-wrap items-center">
-                                <TextReveal text="in " />
-                                <span className="text-gradient ml-2">
-                                    <TextReveal text="Pune" />
-                                </span>
-                            </span>
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold !leading-[1.1] tracking-tight mb-6">
+                            Leading Software Development Company in Pune
                         </h1>
 
                         <p className="text-lg md:text-xl text-text-secondary mb-8 max-w-lg leading-relaxed min-h-[4rem] sm:min-h-[3.5rem] flex flex-col justify-center">

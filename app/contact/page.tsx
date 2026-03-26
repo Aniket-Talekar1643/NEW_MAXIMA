@@ -67,7 +67,7 @@ export default function ContactPage() {
                 <FadeIn>
                     <span className="text-primary font-bold tracking-widest uppercase text-xs mb-4 block">Get In Touch</span>
                     <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
-                        Contact <span className="text-primary">Us</span>
+                        Contact Us
                     </h1>
                     <p className="text-lg text-muted-foreground max-w-2xl">
                         Have a project in mind? We&apos;d love to hear from you. 

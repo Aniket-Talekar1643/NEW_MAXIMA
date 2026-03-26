@@ -11,10 +11,13 @@ export const metadata: Metadata = {
   title: "Web & Mobile App Development Services Pune | Maxima Solutions",
   description: "Explore our specialized web and mobile app development services in Pune. From MERN stack to native mobile solutions, we build for scale.",
   keywords: ["Web & Mobile App Development Services Pune", "MERN Stack Experts India", "UI/UX Design Solutions", "Custom App Development"],
+  alternates: {
+    canonical: "/software-development-services-pune",
+  },
   openGraph: {
     title: "Web & Mobile App Development Services | Maxima Business Solutions",
     description: "Expert software services in Pune including web, mobile, and digital marketing.",
-    url: "https://maximabusiness.com/software-development-services-pune",
+    url: "https://maximabusinesssolutions.com/software-development-services-pune",
   }
 };
 

@@ -8,10 +8,13 @@ export const metadata: Metadata = {
   title: "Trusted IT Outsourcing Agency Pune | Maxima Business Solutions",
   description: "Learn how Maxima, a trusted IT outsourcing agency in Pune, drives digital transformation. Our expert team delivers scalable software excellence.",
   keywords: ["Trusted IT Outsourcing Agency Pune", "Digital Transformation Company Pune", "Software Engineering Expertise", "IT Partner India"],
+  alternates: {
+    canonical: "/it-outsourcing-agency-pune",
+  },
   openGraph: {
     title: "Trusted IT Outsourcing Agency & Digital Transformation Partner",
     description: "Driving innovation & growth as a leading IT outsourcing agency in Pune.",
-    url: "https://maximabusiness.com/it-outsourcing-agency-pune",
+    url: "https://maximabusinesssolutions.com/it-outsourcing-agency-pune",
   }
 };
 

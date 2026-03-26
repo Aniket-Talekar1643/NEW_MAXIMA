@@ -23,16 +23,7 @@ export default function BlogsPage() {
                     >
                         <span className="text-primary font-bold tracking-[0.3em] uppercase text-xs mb-4 block leading-tight">OUR BLOGS</span>
                         <h1 className="text-4xl md:text-6xl font-bold mb-8 !leading-tight tracking-tight">
-                            Insights, Trends & <span className="text-primary relative inline-block">
-                                Updates
-                                <motion.svg className="absolute -bottom-4 left-0 w-full" viewBox="0 0 100 20" preserveAspectRatio="none">
-                                    <motion.path d="M0,10 Q50,20 100,10" fill="none" stroke="currentColor" strokeWidth="4"
-                                        initial={{ pathLength: 0 }}
-                                        animate={{ pathLength: 1 }}
-                                        transition={{ duration: 1, delay: 0.8 }}
-                                    />
-                                </motion.svg>
-                            </span>
+                            Insights, Trends & Updates
                         </h1>
                         <p className="text-lg md:text-xl text-text-secondary leading-relaxed max-w-2xl mx-auto">
                             Stay up-to-date with the latest industry insights, technology trends,

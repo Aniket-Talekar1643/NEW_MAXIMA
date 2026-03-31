@@ -5,8 +5,8 @@ export default function robots(): MetadataRoute.Robots {
         rules: {
             userAgent: '*',
             allow: '/',
-            disallow: '/private/',
+            disallow: ['/private/', '/api/', '/admin/'],
         },
-        sitemap: 'https://maximabusiness.com/sitemap.xml',
+        sitemap: 'https://maximabusinesssolutions.com/sitemap.xml',
     }
 }

@@ -32,7 +32,7 @@ export const BlogsPreview = () => {
                     </div>
                     <FadeIn delay={0.2} direction="left">
                         <Link
-                            href="/blogs"
+                            href="/software-industry-blog"
                             className="group flex items-center gap-2 text-primary font-bold hover:underline underline-offset-8 transition-all text-sm sm:text-base"
                         >
                             View all articles <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
@@ -43,7 +43,7 @@ export const BlogsPreview = () => {
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     {blogs.slice(0, 3).map((blog, index) => (
                         <FadeIn key={blog.slug} delay={index * 0.1}>
-                            <Link href={`/blogs/${blog.slug}`} className="block group">
+                            <Link href={`/software-industry-blog/${blog.slug}`} className="block group">
                                 <motion.article
                                     whileHover={{ y: -4 }}
                                     transition={{ type: "spring", stiffness: 300, damping: 20 }}

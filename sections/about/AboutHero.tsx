@@ -28,21 +28,12 @@ export const AboutHero = () => {
                     </motion.div>
 
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 !leading-tight tracking-tight">
-                        Driving Innovation as a <span className="text-primary relative inline-block">
-                            Trusted
-                            <motion.svg className="absolute -bottom-2 left-0 w-full" viewBox="0 0 100 20" preserveAspectRatio="none">
-                                <motion.path d="M0,10 Q50,20 100,10" fill="none" stroke="currentColor" strokeWidth="4"
-                                    initial={{ pathLength: 0 }}
-                                    animate={{ pathLength: 1 }}
-                                    transition={{ duration: 1, delay: 0.8 }}
-                                />
-                            </motion.svg>
-                        </span> IT Outsourcing Agency in Pune
+                        Your Trusted IT Outsourcing Agency in Pune
                     </h1>
                     <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-                        At Maxima Business Solutions, a trusted IT outsourcing agency in Pune,
-                        we focus on digital transformation and technical excellence—empowering 
-                        enterprises with future-ready software solutions.
+                        Partner with Maxima Business Solutions, a leading IT outsourcing agency in Pune. 
+                        We focus on digital transformation and technical excellence—empowering 
+                        enterprises with future-ready custom software solutions.
                     </p>
                 </motion.div>
             </div>

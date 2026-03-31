@@ -4,20 +4,24 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
-import { KeyboardWrapper } from "@/components/KeyboardWrapper";
-import { Preloader } from "@/components/Preloader";
+import Script from 'next/script';
+
+
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://maximabusiness.com"),
+  metadataBase: new URL("https://maximabusinesssolutions.com"),
   title: "Maxima Business Solutions | Top Software Development Company in Pune",
   description: "Maxima Business Solutions is a premier software development company in Pune. Expertise in MERN stack, mobile apps, digital transformation, and SEO solutions.",
   keywords: ["Software Development Company in Pune", "Web Development Company in Pune", "MERN Stack Development Pune", "Digital Transformation Company Pune", "Custom Software Solutions Pune", "IT Services Pune"],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Maxima Business Solutions | IT Services in Pune",
     description: "Scalable, innovative digital solutions helping modern businesses grow and succeed.",
-    url: "https://maximabusiness.com",
+    url: "https://maximabusinesssolutions.com",
     siteName: "Maxima Business",
     images: [
       {
@@ -42,8 +46,8 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Maxima Business Solutions",
-  "url": "https://maximabusiness.com",
-  "logo": "https://maximabusiness.com/LOGO/mbs-logo-1.png",
+  "url": "https://maximabusinesssolutions.com",
+  "logo": "https://maximabusinesssolutions.com/LOGO/mbs-logo-1.png",
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+91-8856949454",
@@ -62,12 +66,12 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Maxima Business Solutions",
-  "image": "https://maximabusiness.com/LOGO/mbs-logo-1.png",
-  "url": "https://maximabusiness.com",
+  "image": "https://maximabusinesssolutions.com/LOGO/mbs-logo-1.png",
+  "url": "https://maximabusinesssolutions.com",
   "telephone": "+91-8856949454",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Prime Tech Hub, Undri",
+    "streetAddress": "Undri",
     "addressLocality": "Pune",
     "postalCode": "411060",
     "addressCountry": "IN"
@@ -79,6 +83,8 @@ const localBusinessSchema = {
   },
   "priceRange": "$$"
 };
+
+import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 
 export default function RootLayout({
   children,
@@ -98,7 +104,11 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.variable} font-sans antialiased min-h-screen flex flex-col`}>
-        <Preloader />
+        <Script
+          src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+          strategy="lazyOnload"
+        />
+        
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -110,7 +120,8 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-          <KeyboardWrapper />
+          <FloatingWhatsApp />
+     
         </ThemeProvider>
       </body>
     </html>

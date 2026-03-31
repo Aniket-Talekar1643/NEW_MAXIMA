@@ -6,52 +6,52 @@ const projects = [
     {
         name: 'TrendyThreads',
         desc: 'Developed Trendy Threads, a fashion e-commerce platform with advanced admin management, smooth customer shopping experience, and integrated payments.',
-        image: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop'
+        image: '/portfolio/trendy-threads.webp'
     },
     {
         name: 'Nikitas Curry Corner',
         desc: 'Developed a modern website for Nikita’s Curry Corner with seamless online ordering, simple menu management, and real-time delivery tracking.',
-        image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070&auto=format&fit=crop'
+        image: '/portfolio/nikitas-curry-corner.webp'
     },
     {
         name: 'Shred-n-Shape',
         desc: 'Developed Shred-n-Shape using the MERN stack, featuring customized workouts, nutrition tracking, and visual progress insights in a responsive interface.',
-        image: 'https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070&auto=format&fit=crop'
+        image: '/portfolio/shred-n-shape.webp'
     },
     {
         name: 'UrbanAxis',
         desc: 'Developed the UrbanAxis website using Next.js, delivering high speed, strong SEO optimization, and a modern responsive interface for showcasing services.',
-        image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop'
+        image: '/portfolio/urban-axis.webp'
     },
     {
         name: 'Everwin PT',
         desc: 'Developed a responsive static website for Everwinpt presenting products and services with clear information and a clean browsing experience.',
-        image: 'https://images.unsplash.com/photo-1454165833767-0ae90ce0797f?q=80&w=2070&auto=format&fit=crop'
+        image: '/portfolio/everwin-pt.webp'
     },
     {
         name: 'Sachniti',
         desc: 'Developed the Sachniti website on WordPress with easy content management, SEO-friendly structure, and flexible contact forms.',
-        image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=2070&auto=format&fit=crop'
+        image: '/portfolio/sachniti.webp'
     },
     {
         name: 'Intignus Biotech',
         desc: 'A biotechnology company website designed to present research, innovation, and corporate identity professionally.',
-        image: 'https://images.unsplash.com/photo-1532187863486-abf9b3c44463?q=80&w=2070&auto=format&fit=crop'
+        image: '/portfolio/intignus-biotech.webp'
     },
     {
         name: 'Snumero',
         desc: 'A technology-driven website designed to highlight digital solutions and services with modern visuals and user-friendly navigation.',
-        image: 'https://images.unsplash.com/photo-1551288049-014c05df7e9a?q=80&w=2070&auto=format&fit=crop'
+        image: '/portfolio/snumero.webp'
     },
     {
         name: 'R3 Contractor',
         desc: 'A construction services website built to present projects, expertise, and company capabilities with clarity.',
-        image: 'https://images.unsplash.com/photo-1503387762-592dea58ef23?q=80&w=2070&auto=format&fit=crop'
+        image: '/portfolio/r3contructor.webp'
     },
     {
-        name: 'TechBiz.in',
-        desc: 'A professional business website designed to showcase services, business solutions, and corporate credibility.',
-        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop'
+        name: 'Train2Gain',
+        desc: 'Developed Train2Gain, a comprehensive fitness platform offering personalized training plans and real-time performance tracking.',
+        image: '/portfolio/train2gain.webp'
     }
 ];
 
@@ -84,9 +84,9 @@ export const PortfolioList = () => {
                     transition={{ duration: 0.8 }}
                     className="max-w-xl mx-auto"
                 >
-                    <h2 className="text-3xl md:text-5xl font-bold mb-4 !leading-tight">Software Tech Success Stories</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold mb-4 !leading-tight">Our Web Development Portfolio</h2>
                     <p className="text-lg text-muted-foreground mb-8">
-                        Explore our software tech success stories and successful <br className="hidden md:block" /> client collaborations that drive digital growth.
+                        Explore our software tech success stories and successful <br className="hidden md:block" /> client collaborations that drive digital transformation.
                     </p>
                     <div className="w-24 h-1 bg-primary text-transparent mx-auto rounded-full bg-gradient-to-r from-primary to-primary/20" />
                 </motion.div>
@@ -121,7 +121,7 @@ export const PortfolioList = () => {
                                         {project.desc}
                                     </p>
                                     <div className="flex flex-wrap justify-center lg:justify-start gap-3 pt-4">
-                                        {['ReactJs', 'NextJs', 'Tailwind', 'Framer'].map((tech, i) => (
+                                        {['ReactJs', 'NextJs', 'Tailwind', 'NodeJs', 'ExpressJs','MongoDB'].map((tech, i) => (
                                             <motion.span
                                                 key={tech}
                                                 initial={{ opacity: 0, x: -10 }}

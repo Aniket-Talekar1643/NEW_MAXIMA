@@ -1,20 +1,23 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Hire Dedicated Software Developers in Pune | Contact Maxima",
-    description: "Looking to hire dedicated software developers in Pune? Contact Maxima Business Solutions today for expert IT consultation and custom software builds.",
-    keywords: ["Hire Dedicated Software Developers Pune", "Contact IT Specialists Pune", "Get IT Consultation", "Software Development Inquiry"],
+  title: "Hire Software Developers in Pune | Contact Maxima",
+  description: "Want to hire software developers in Pune? Contact Maxima Business Solutions today for custom app development.",
+  keywords: ["Hire Software Developers in Pune", "Expert Developers India", "Contact IT Company Pune", "Hire MERN Stack Developers"],
+  alternates: {
+    canonical: "/contact",
+  },
   openGraph: {
-    title: "Contact Maxima Business Solutions | Hire Experts in Pune",
-    description: "Start your digital transformation journey today. Let's discuss your next project with Pune's top IT team.",
-    url: "https://maximabusiness.com/contact",
+    title: "Hire Software Developers in Pune | Maxima Solutions",
+    description: "Get in touch with Maxima Business Solutions to hire expert software engineers.",
+    url: "https://maximabusinesssolutions.com/contact",
   }
 };
 
 export default function ContactLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return <>{children}</>;
 }

@@ -127,9 +127,9 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 202 74% 35%;
-    --primary-deep: 202 80% 20%;
-    --primary-accent: 203 82% 26%;
+    --primary: 202 85% 50%;
+    --primary-deep: 202 85% 30%;
+    --primary-accent: 203 85% 65%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -146,17 +146,17 @@
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 202 74% 35%;
+    --ring: 202 85% 50%;
 
-    --primary-rgb: 23, 116, 166;
+    --primary-rgb: 25, 155, 230;
     --background-rgb: 2, 8, 20;
   }
 
   .dark.theme-blue {
-    --primary: 202 74% 35%;
-    --primary-deep: 202 80% 20%;
-    --primary-accent: 203 82% 26%;
-    --ring: 202 74% 35%;
+    --primary: 202 85% 50%;
+    --primary-deep: 202 85% 30%;
+    --primary-accent: 203 85% 65%;
+    --ring: 202 85% 50%;
   }
 
   .dark.theme-violet {

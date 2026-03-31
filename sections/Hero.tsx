@@ -152,22 +152,13 @@ export const Hero = () => {
                             <span className="text-xs font-bold text-primary tracking-widest uppercase">PUNE'S TOP IT AGENCY</span>
                         </div>
 
-                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold !leading-[1.1] tracking-tight mb-6 flex flex-col">
-                            <TextReveal text="Leading Software" />
-                            <span className="text-primary truncate h-[1.2em]">
-                                <TextReveal text="Development Company" />
-                            </span>
-                            <span className="flex flex-wrap items-center">
-                                <TextReveal text="in " />
-                                <span className="text-gradient ml-2">
-                                    <TextReveal text="Pune" />
-                                </span>
-                            </span>
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold !leading-[1.1] tracking-tight mb-6">
+                            Leading Software Development Company in Pune
                         </h1>
 
                         <p className="text-lg md:text-xl text-text-secondary mb-8 max-w-lg leading-relaxed min-h-[4rem] sm:min-h-[3.5rem] flex flex-col justify-center">
                             <span>
-                                We are a results-driven software development company in Pune, specializing in{" "}
+                                We are a top-rated software development company in Pune, specializing in{" "}
                                 <span className="relative inline-block overflow-hidden h-7 sm:h-8 align-middle">
                                     <motion.span
                                         key="animated-text"
@@ -191,28 +182,22 @@ export const Hero = () => {
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <MagneticButton>
-                                <Link href="/contact">
-                                    <motion.button
-                                        whileHover={{ scale: 1.05 }}
-                                        whileTap={{ scale: 0.95 }}
-                                        className="px-8 py-4 rounded-full bg-primary-gradient text-white font-bold text-lg shadow-xl shadow-primary/20 transition-all hover:shadow-primary/40 flex items-center gap-2"
-                                    >
-                                        <span>Contact Us</span>
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                        </svg>
-                                    </motion.button>
+                                <Link 
+                                    href="/contact"
+                                    className="px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-primary-gradient text-white font-bold text-base sm:text-lg shadow-xl shadow-primary/20 transition-all hover:shadow-primary/40 flex items-center justify-center gap-2 hover:scale-105 active:scale-95 w-full sm:w-auto"
+                                >
+                                    <span>Contact Us</span>
+                                    <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
                                 </Link>
                             </MagneticButton>
                             <MagneticButton strength={20}>
-                                <Link href="/services">
-                                    <motion.button
-                                        whileHover={{ scale: 1.05 }}
-                                        whileTap={{ scale: 0.95 }}
-                                        className="px-8 py-4 rounded-full border border-border text-foreground font-bold text-lg bg-muted/40 backdrop-blur-sm transition-all hover:bg-muted/60"
-                                    >
-                                        Explore Services
-                                    </motion.button>
+                                <Link 
+                                    href="/software-development-services-pune"
+                                    className="px-6 py-3 sm:px-8 sm:py-4 rounded-full border border-border text-foreground font-bold text-base sm:text-lg bg-muted/40 backdrop-blur-sm transition-all hover:bg-muted/60 hover:scale-105 active:scale-95 flex items-center justify-center w-full sm:w-auto"
+                                >
+                                    Explore Services
                                 </Link>
                             </MagneticButton>
                         </div>

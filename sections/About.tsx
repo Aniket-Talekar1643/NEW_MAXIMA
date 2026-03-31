@@ -110,20 +110,17 @@ export const About = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
                     >
-                        <span className="text-primary font-bold tracking-widest uppercase text-sm mb-4 block">
-                            About Us
-                        </span>
                         <h2 className="text-3xl md:text-5xl font-bold mb-6 !leading-tight">
-                            MERN Stack & <br />
+                            Your Trusted <br />
                             <span className="text-primary">Software Development</span> <br />
-                            Experts in Pune.
+                            Company in Pune
                         </h2>
                         <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                             At Maxima, we believe every business is unique. As a premier software development company in Pune,
-                            we specialize in MERN stack, mobile apps, and digital transformation—crafting 
-                            high-performance solutions that drive global growth.
+                            we specialize in custom software solutions, MERN stack web apps, and complete digital transformation—crafting 
+                            high-performance products that drive global growth.
                         </p>
-                        <Link href="/about">
+                        <Link href="/it-outsourcing-agency-pune">
                             <motion.button
                                 whileHover={{ x: 10 }}
                                 className="group flex items-center space-x-2 text-foreground font-bold text-lg"

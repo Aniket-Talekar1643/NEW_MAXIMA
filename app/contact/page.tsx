@@ -17,8 +17,6 @@ const formSchema = z.object({
 
 type FormValues = z.infer<typeof formSchema>;
 
-import { submitEnquiry } from "@/lib/api";
-
 export default function ContactPage() {
     const [submitError, setSubmitError] = useState<string | null>(null);
     const {
@@ -33,24 +31,24 @@ export default function ContactPage() {
     const onSubmit = async (data: FormValues) => {
         setSubmitError(null);
         try {
-            // Get reCAPTCHA token
-            if (!window.grecaptcha) {
-                throw new Error("reCAPTCHA not loaded");
-            }
-
-            const token = await new Promise<string>((resolve, reject) => {
-                window.grecaptcha.ready(() => {
-                    window.grecaptcha
-                        .execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!, { action: "contact" })
-                        .then(resolve)
-                        .catch(reject);
-                });
+            const response = await fetch("https://formsubmit.co/ajax/info@maximabusinesssolutions.com", {
+                method: "POST",
+                headers: { 
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({
+                    _subject: `New Contact Form Submission: ${data.subject}`,
+                    name: data.name,
+                    email: data.email,
+                    subject: data.subject,
+                    message: data.message
+                })
             });
 
-            const result = await submitEnquiry({ ...data, token });
-
-            if (!result.success) {
-                throw new Error(result.message || "Failed to send message");
+            if (!response.ok) {
+                const result = await response.json();
+                throw new Error(result?.message || "Failed to send message");
             }
 
             reset();
